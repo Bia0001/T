@@ -8,3 +8,8 @@ C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Model\obj\Debug\Sistema.Ifsp.Model.csprojResolveAssemblyReference.cache
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Model\obj\Debug\Sistema.Ifsp.Model.dll
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Model\obj\Debug\Sistema.Ifsp.Model.pdb
+C:\Users\Beatriz\Desktop\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Model\bin\Debug\Sistema.Ifsp.Model.dll
+C:\Users\Beatriz\Desktop\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Model\bin\Debug\Sistema.Ifsp.Model.pdb
+C:\Users\Beatriz\Desktop\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Model\obj\Debug\Sistema.Ifsp.Model.csprojResolveAssemblyReference.cache
+C:\Users\Beatriz\Desktop\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Model\obj\Debug\Sistema.Ifsp.Model.dll
+C:\Users\Beatriz\Desktop\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Model\obj\Debug\Sistema.Ifsp.Model.pdb

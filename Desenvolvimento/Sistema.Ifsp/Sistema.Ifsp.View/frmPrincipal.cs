@@ -2154,5 +2154,15 @@ namespace Sistema.Ifsp.View
             printPreview.Document = relatorioSolicitacaoSaida;
             printPreview.ShowDialog();
         }
+
+        private void rdbNaoSaidaSupervisionada_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ferramentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
