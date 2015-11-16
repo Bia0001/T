@@ -29,11 +29,13 @@ namespace Sistema.Ifsp.View
         private frmPrincipal()
         {
             InitializeComponent();
-            //preencherGridsSolicitacoes();
-            //preencherGridVisitanteFornecedores();
-            //atualizaEstacionamento();
-            //atualizaGridPermanenciaVeiculo();
-            //telaInicialCadTer();
+            preencherGridsSolicitacoes();
+            preencherGridVisitanteFornecedores();
+            atualizaEstacionamento();
+            atualizaGridPermanenciaVeiculo();
+            telaInicialCadTer();
+            //tabControl.TabPages.Clear();
+            //tabControl.TabPages.Add(tabRelatorios);
         }
 
         private void preencherGridVisitanteFornecedores()
@@ -160,7 +162,7 @@ namespace Sistema.Ifsp.View
                             {
                                 abertura = DateTime.Now,
                                 aluno = aluno,
-                                assistenteAluno = (Funcionario) acessoPessoa,
+                                assistenteAluno = (Funcionario)acessoPessoa,
                                 motivo = txtMotivoAluno.Text,
                                 status = StatusSolicitacao.aberto,
                                 saidaSupervisionada = saidaSupervisionada
@@ -190,7 +192,7 @@ namespace Sistema.Ifsp.View
                         {
                             abertura = DateTime.Now,
                             aluno = aluno,
-                            assistenteAluno = (Funcionario) acessoPessoa,
+                            assistenteAluno = (Funcionario)acessoPessoa,
                             motivo = txtMotivoAluno.Text
                         };
                         var sDao = new SolicitacaoEntradaDAO();
@@ -382,7 +384,7 @@ namespace Sistema.Ifsp.View
                     var ss = ssDAO.find(Convert.ToInt32(dgvSolicitacoesAbertas.CurrentRow.Cells[0].Value));
                     ss.encerramento = DateTime.Now;
                     ss.status = StatusSolicitacao.encerrado;
-                    ss.porteiro = (PessoaFisica) acessoPessoa;
+                    ss.porteiro = (PessoaFisica)acessoPessoa;
                     try
                     {
                         if (ssDAO.atualizar(ss))
@@ -1350,7 +1352,7 @@ namespace Sistema.Ifsp.View
             cmbPerVeiDocente.Enabled = true;
             lblPerVeiSerPre1.Enabled = true;
             txtPerVeiSerPre1.Enabled = true;
-            txtPerVeiSerPre1.Text = null;   
+            txtPerVeiSerPre1.Text = null;
             txtPerVeiSerPre2.Enabled = true;
             txtPerVeiSerPre2.Text = null;
             txtPerVeiSerPre3.Enabled = true;
@@ -1440,7 +1442,7 @@ namespace Sistema.Ifsp.View
                                 p.curso = cmbPerVeiCurso.Text;
                                 p.modulo = cmbPerVeiModulo.Text;
                                 p.anoLetivo = cmbPerVeiAnoLetivo.Text;
-                                p.funcionario = (AssistenteAdministracao) acessoPessoa;
+                                p.funcionario = (AssistenteAdministracao)acessoPessoa;
                                 p.dataEntrada = DateTime.Now;
                                 pDAO.adicionar(p);
                                 mensagem("Permanência de veículo cadastrad com sucesso!");
@@ -1476,7 +1478,7 @@ namespace Sistema.Ifsp.View
                                 p.prontuario2 = txtPerVeiProntuario2.Text;
                                 p.prontuario3 = txtPerVeiProntuario3.Text;
                                 p.prontuario4 = txtPerVeiProntuario4.Text;
-                                p.funcionario = (AssistenteAdministracao) acessoPessoa;
+                                p.funcionario = (AssistenteAdministracao)acessoPessoa;
                                 pDAO.adicionar(p);
                                 mensagem("Permanência de veículo cadastrada com sucesso!");
                                 atualizaGridPermanenciaVeiculo();
@@ -1761,6 +1763,7 @@ namespace Sistema.Ifsp.View
             {
                 var pDAO = new PessoaFisicaDAO();
                 usuarioLogado = pDAO.find(id);
+                acessoPessoa = usuarioLogado;
                 lblUsuario.Text = usuarioLogado.nome;
                 if (nivelAcesso == "Administração")
                 {
@@ -1962,7 +1965,7 @@ namespace Sistema.Ifsp.View
                         var t = tDAO.find(id);
                         if (t != null)
                         {
-                            preenchendoDadosCadTer(t);                       
+                            preenchendoDadosCadTer(t);
                         }
                         else
                         {
@@ -2120,25 +2123,72 @@ namespace Sistema.Ifsp.View
 
         private void relatorioSolicitacaoSaida_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            //fonte do titulo
-            Font fonteTitulo = new Font("Arial", 12, FontStyle.Bold);
-            //fonte dos cabeçalhos
-            Font fonteCabeça = new Font("Arial", 11, FontStyle.Bold);
-            //fonte do texto
-            Font fonteTexto = new Font("Arial", 11);
-            //core
-            Brush corPreta = new SolidBrush(Color.Black);
-            // local do titulo
-            Point pontoTitulo = new Point(30, 50);
+            int eixoX = 105;
+            string expirado;
+            // titulo
+            e.Graphics.DrawString("Relatório mensal de solicitações de saída de aluno", new Font("Arial", 12, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 30));
+            //headers
+            e.Graphics.DrawString("Prontuário", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 85));
+            e.Graphics.DrawString("Nome", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(107, 85));
+            e.Graphics.DrawString("Abertura", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(325, 85));
+            e.Graphics.DrawString("Encerramento", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(490, 85));
+            e.Graphics.DrawString("Saida. Sup.", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(640, 85));
+            e.Graphics.DrawString("Status", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(740, 85));
 
-            e.Graphics.DrawString("Relatório de Solicitações de saída de aluno", fonteTitulo, corPreta, pontoTitulo);
+            string encerramento = "";
+            string saidaSupervisionada = "Não";
+            IQueryable<SolicitacaoSaida> solicitacoes = null;
+            try
+            {
+                var sDAO = new SolicitacaoSaidaDAO();
+                solicitacoes = sDAO.get(s => s.abertura.Year.ToString() == cmbRelAno.SelectedItem.ToString() && s.abertura.Month.ToString() == cmbRelMes.SelectedItem.ToString());
+            }
+            catch (Exception)
+            {
+                mensagem("Erro ao gerar relatório");
+            }
+            foreach (SolicitacaoSaida s in solicitacoes)
+            {
+                if (s.encerramento != null)
+                {
+                    encerramento = s.encerramento.Value.ToString("dd/mm/yyy hh:mm:ss");
+                }
+                else
+                {
+                    encerramento = "";
+                }
+                if (s.saidaSupervisionada == true)
+                {
+                    saidaSupervisionada = "Sim";
+                }
+                else
+                {
+                    saidaSupervisionada = "Não";
+                }
+                e.Graphics.DrawString(s.aluno.prontuario.prontuario, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(20, eixoX));
+                e.Graphics.DrawString(s.aluno.nome, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(107, eixoX));
+                e.Graphics.DrawString(s.abertura.ToString("dd/mm/yyy hh:mm:ss"), new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(325, eixoX));
+                e.Graphics.DrawString(encerramento, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(490, eixoX));
+                e.Graphics.DrawString(saidaSupervisionada, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(640, eixoX));
+                e.Graphics.DrawString(s.status.ToString(), new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(740, eixoX));
+                eixoX += 15;
+            }
         }
 
         private void btnRelSolGerar_Click(object sender, EventArgs e)
         {
+
+            //if (combosRelatorioSelecionados())
+            //{
+            printPreview.WindowState = FormWindowState.Maximized;
             //pré visualização do documento a imprimir
             printPreview.Document = relatorioSolicitacaoSaida;
             printPreview.ShowDialog();
+            //}
+            //else
+            //{
+            //    return;
+            //}            
         }
 
         private void btnRegistrarSaidaVisitante(object sender, EventArgs e)
@@ -2165,6 +2215,19 @@ namespace Sistema.Ifsp.View
                 {
                     return;
                 }
+            }
+        }
+
+        private bool combosRelatorioSelecionados()
+        {
+            if (cmbRelAno.SelectedItem == null || cmbRelMes.SelectedItem == null)
+            {
+                mensagem("Selecione ano e mes");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }
