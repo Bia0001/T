@@ -44,8 +44,8 @@ namespace Sistema.Ifsp.View
             dgvVisitante.Rows.Clear();
             FornecedorDAO fDao = new FornecedorDAO();
             VisitanteDAO vDao = new VisitanteDAO();
-            var fornecedores = fDao.get(f => f.entrada.Day == DateTime.Now.Day && f.entrada.Month == DateTime.Now.Month && f.entrada.Year == DateTime.Now.Year && f.saida == f.entrada);
-            var visitantes = vDao.get(v => v.entrada.Day == DateTime.Now.Day && v.entrada.Month == DateTime.Now.Month && v.entrada.Year == DateTime.Now.Year && v.saida == v.entrada);
+            var fornecedores = fDao.get(f => f.entrada.Day == DateTime.Now.Day && f.entrada.Month == DateTime.Now.Month && f.entrada.Year == DateTime.Now.Year && f.saida == null);
+            var visitantes = vDao.get(v => v.entrada.Day == DateTime.Now.Day && v.entrada.Month == DateTime.Now.Month && v.entrada.Year == DateTime.Now.Year && v.saida == null);
             foreach (Fornecedor item in fornecedores)
             {
                 dgvFornecedores.Rows.Add(item.idFornecedor, item.nome, item.empresa, item.entrada);
@@ -585,7 +585,6 @@ namespace Sistema.Ifsp.View
                             motivo = txtMotivoFornecedorVisitante.Text,
                             nome = txtNomeFornecedorVisitante.Text,
                             rg = txtRgFornecedorVisitante.Text,
-                            saida = data
                         };
                         var fDAO = new FornecedorDAO();
                         if (fDAO.adicionar(f))
@@ -609,7 +608,6 @@ namespace Sistema.Ifsp.View
                             motivo = txtMotivoFornecedorVisitante.Text,
                             nome = txtNomeFornecedorVisitante.Text,
                             rg = txtRgFornecedorVisitante.Text,
-                            saida = data
                         };
                         var vDAO = new VisitanteDAO();
                         if (vDAO.adicionar(v))
@@ -2126,7 +2124,7 @@ namespace Sistema.Ifsp.View
             int eixoX = 105;
             string expirado;
             // titulo
-            e.Graphics.DrawString("Relatório mensal de solicitações de saída de aluno", new Font("Arial", 12, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 30));
+            e.Graphics.DrawString("Relatório mensal de solicitações de saída antecipada de aluno", new Font("Arial", 12, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 30));
             //headers
             e.Graphics.DrawString("Prontuário", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 85));
             e.Graphics.DrawString("Nome", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(107, 85));
@@ -2177,18 +2175,17 @@ namespace Sistema.Ifsp.View
 
         private void btnRelSolGerar_Click(object sender, EventArgs e)
         {
-
-            //if (combosRelatorioSelecionados())
-            //{
-            printPreview.WindowState = FormWindowState.Maximized;
-            //pré visualização do documento a imprimir
-            printPreview.Document = relatorioSolicitacaoSaida;
-            printPreview.ShowDialog();
-            //}
-            //else
-            //{
-            //    return;
-            //}            
+            if (combosRelatorioSelecionados())
+            {
+                printPreview.WindowState = FormWindowState.Maximized;
+                //pré visualização do documento a imprimir
+                printPreview.Document = relatorioSolicitacaoSaida;
+                printPreview.ShowDialog();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void btnRegistrarSaidaVisitante(object sender, EventArgs e)
@@ -2220,7 +2217,7 @@ namespace Sistema.Ifsp.View
 
         private bool combosRelatorioSelecionados()
         {
-            if (cmbRelAno.SelectedItem == null || cmbRelMes.SelectedItem == null)
+            if (cmbRelAno.SelectedItem == null || cmbRelMes.SelectedItem == null || cmbRelAno.SelectedText == "Selecione" || cmbRelMes.SelectedText == "Selecione")
             {
                 mensagem("Selecione ano e mes");
                 return false;
@@ -2228,6 +2225,171 @@ namespace Sistema.Ifsp.View
             else
             {
                 return true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (combosRelatorioSelecionados())
+            {
+                printPreview.WindowState = FormWindowState.Maximized;
+                //pré visualização do documento a imprimir
+                printPreview.Document = relatorioSolicitacaoEntrada;
+                printPreview.ShowDialog();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void relatorioSolicitacaoEntrada_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            int eixoX = 105;
+            // titulo
+            e.Graphics.DrawString("Relatório mensal de solicitações de entrada antecipada de aluno", new Font("Arial", 12, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 30));
+            //headers
+            e.Graphics.DrawString("Prontuário", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 85));
+            e.Graphics.DrawString("Nome", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(107, 85));
+            e.Graphics.DrawString("Abertura", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(325, 85));
+            
+            IQueryable<SolicitacaoEntrada> solicitacoes = null;
+            try
+            {
+                var sDAO = new SolicitacaoEntradaDAO();
+                solicitacoes = sDAO.get(s => s.abertura.Year.ToString() == cmbRelAno.SelectedItem.ToString() && s.abertura.Month.ToString() == cmbRelMes.SelectedItem.ToString());
+            }
+            catch (Exception)
+            {
+                mensagem("Erro ao gerar relatório");
+            }
+
+            foreach (SolicitacaoEntrada s in solicitacoes)
+            {
+                e.Graphics.DrawString(s.aluno.prontuario.prontuario, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(20, eixoX));
+                e.Graphics.DrawString(s.aluno.nome, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(107, eixoX));
+                e.Graphics.DrawString(s.abertura.ToString("dd/mm/yyy hh:mm:ss"), new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(325, eixoX));
+                eixoX += 15;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (combosRelatorioSelecionados())
+            {
+                printPreview.WindowState = FormWindowState.Maximized;
+                //pré visualização do documento a imprimir
+                relatorioVisitantes.DefaultPageSettings.Landscape = true;
+                printPreview.Document = relatorioVisitantes;
+                printPreview.ShowDialog();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void relatorioVisitantes_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            int eixoX = 105;
+            string expirado;
+            // titulo
+            e.Graphics.DrawString("Relatório mensal de vistantes", new Font("Arial", 12, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 30));
+            //headers
+            e.Graphics.DrawString("Nome", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 85));
+            e.Graphics.DrawString("RG", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(320, 85));
+            e.Graphics.DrawString("Entrada", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(400, 85));
+            e.Graphics.DrawString("Saída", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(550, 85));
+            e.Graphics.DrawString("Empresa", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(700, 85));
+
+            IQueryable<Visitante> visitantes = null;
+            string saida = "";
+            try
+            {
+                var vDAO = new VisitanteDAO();
+                visitantes = vDAO.get(v => v.entrada.Year.ToString() == cmbRelAno.SelectedItem.ToString() && v.entrada.Month.ToString() == cmbRelMes.SelectedItem.ToString());
+            }
+            catch (Exception)
+            {
+                mensagem("Erro ao gerar relatório");
+            }
+            foreach (Visitante v in visitantes)
+            {
+                if (v.saida == null)
+                {
+                    saida = "";
+                }
+                else
+                {
+                    saida = v.saida.Value.ToString("dd/mm/yyy hh:mm:ss");
+                }
+                e.Graphics.DrawString(v.nome, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(20, eixoX));
+                e.Graphics.DrawString(v.rg, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(320, eixoX));
+                e.Graphics.DrawString(v.entrada.ToString("dd/mm/yyy hh:mm:ss"), new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(400, eixoX));
+                e.Graphics.DrawString(saida, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(550, eixoX));
+                e.Graphics.DrawString(v.empresa, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(700, eixoX));
+                eixoX += 15;
+            }
+        }
+
+        private void relatorioFonecedores_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            {
+                int eixoX = 105;
+                string expirado;
+                // titulo
+                e.Graphics.DrawString("Relatório mensal de fornecedores", new Font("Arial", 12, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 30));
+                //headers
+                e.Graphics.DrawString("Nome", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(20, 85));
+                e.Graphics.DrawString("RG", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(320, 85));
+                e.Graphics.DrawString("Entrada", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(400, 85));
+                e.Graphics.DrawString("Saída", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(550, 85));
+                e.Graphics.DrawString("Empresa", new Font("Arial", 11, FontStyle.Bold), new SolidBrush(Color.Black), new Point(700, 85));
+
+                IQueryable<Fornecedor> fornecedores = null;
+                string saida = "";
+                try
+                {
+                    var fDAO = new FornecedorDAO();
+                    fornecedores = fDAO.get(f => f.entrada.Year.ToString() == cmbRelAno.SelectedItem.ToString() && f.entrada.Month.ToString() == cmbRelMes.SelectedItem.ToString());
+                }
+                catch (Exception)
+                {
+                    mensagem("Erro ao gerar relatório");
+                }
+                foreach (Fornecedor f in fornecedores)
+                {
+                    if (f.saida == null)
+                    {
+                        saida = "";
+                    }
+                    else
+                    {
+                        saida = f.saida.Value.ToString("dd/mm/yyy hh:mm:ss");
+                    }
+                    e.Graphics.DrawString(f.nome, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(20, eixoX));
+                    e.Graphics.DrawString(f.rg, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(320, eixoX));
+                    e.Graphics.DrawString(f.entrada.ToString("dd/mm/yyy hh:mm:ss"), new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(400, eixoX));
+                    e.Graphics.DrawString(saida, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(550, eixoX));
+                    e.Graphics.DrawString(f.empresa, new Font("Arial", 11, FontStyle.Regular), new SolidBrush(Color.Black), new Point(700, eixoX));
+                    eixoX += 15;
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (combosRelatorioSelecionados())
+            {
+                printPreview.WindowState = FormWindowState.Maximized;
+                //pré visualização do documento a imprimir
+                relatorioFonecedores.DefaultPageSettings.Landscape = true;
+                printPreview.Document = relatorioFonecedores;
+                printPreview.ShowDialog();
+            }
+            else
+            {
+                return;
             }
         }
     }

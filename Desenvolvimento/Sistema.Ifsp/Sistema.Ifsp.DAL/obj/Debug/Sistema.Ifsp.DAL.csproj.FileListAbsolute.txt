@@ -66,3 +66,4 @@ C:\Users\Jônatas\Documents\GitHub\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.D
 C:\Users\Jônatas\Documents\GitHub\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.pdb
 C:\Users\Jônatas\Documents\GitHub\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.criacao.resources
 C:\Users\Jônatas\Documents\GitHub\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csproj.GenerateResource.Cache
+C:\Users\Jônatas\Documents\GitHub\T\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.alerandoclassefornecedor.resources

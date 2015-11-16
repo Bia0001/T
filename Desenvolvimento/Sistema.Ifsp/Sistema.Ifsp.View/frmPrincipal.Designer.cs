@@ -282,17 +282,20 @@
             this.grpGerRelFornecedores = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.grpGerRelVisitantes = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRelatorioVisitante = new System.Windows.Forms.Button();
             this.grpGerRelSolicitacaoEntrada = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRelSolEntrada = new System.Windows.Forms.Button();
             this.grpGerRelSolicitacaoSaida = new System.Windows.Forms.GroupBox();
-            this.btnRelSolGerar = new System.Windows.Forms.Button();
+            this.btnRelSolSaida = new System.Windows.Forms.Button();
             this.timerAtualizaSolicitacoes = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.lblUsuario = new System.Windows.Forms.Label();
             this.timerAtualizaEstacionamento = new System.Windows.Forms.Timer(this.components);
             this.printPreview = new System.Windows.Forms.PrintPreviewDialog();
             this.relatorioSolicitacaoSaida = new System.Drawing.Printing.PrintDocument();
+            this.relatorioSolicitacaoEntrada = new System.Drawing.Printing.PrintDocument();
+            this.relatorioVisitantes = new System.Drawing.Printing.PrintDocument();
+            this.relatorioFonecedores = new System.Drawing.Printing.PrintDocument();
             this.tabControl.SuspendLayout();
             this.tabSolicitacoes.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -3250,7 +3253,7 @@
             this.tabRelatorios.Padding = new System.Windows.Forms.Padding(3);
             this.tabRelatorios.Size = new System.Drawing.Size(1087, 498);
             this.tabRelatorios.TabIndex = 12;
-            this.tabRelatorios.Text = "Gerar relatorios de solicitações  de aluno";
+            this.tabRelatorios.Text = "Gerar relatorios de solicitações de aluno";
             this.tabRelatorios.UseVisualStyleBackColor = true;
             // 
             // label9
@@ -3483,10 +3486,11 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "Gerar Relatório";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // grpGerRelVisitantes
             // 
-            this.grpGerRelVisitantes.Controls.Add(this.button2);
+            this.grpGerRelVisitantes.Controls.Add(this.btnRelatorioVisitante);
             this.grpGerRelVisitantes.Location = new System.Drawing.Point(99, 198);
             this.grpGerRelVisitantes.Name = "grpGerRelVisitantes";
             this.grpGerRelVisitantes.Size = new System.Drawing.Size(447, 86);
@@ -3494,19 +3498,20 @@
             this.grpGerRelVisitantes.TabStop = false;
             this.grpGerRelVisitantes.Text = "Relatório de Visitantes";
             // 
-            // button2
+            // btnRelatorioVisitante
             // 
-            this.button2.Location = new System.Drawing.Point(284, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 26);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Gerar Relatório";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRelatorioVisitante.Location = new System.Drawing.Point(284, 54);
+            this.btnRelatorioVisitante.Name = "btnRelatorioVisitante";
+            this.btnRelatorioVisitante.Size = new System.Drawing.Size(159, 26);
+            this.btnRelatorioVisitante.TabIndex = 0;
+            this.btnRelatorioVisitante.Text = "Gerar Relatório";
+            this.btnRelatorioVisitante.UseVisualStyleBackColor = true;
+            this.btnRelatorioVisitante.Click += new System.EventHandler(this.button2_Click);
             // 
             // grpGerRelSolicitacaoEntrada
             // 
             this.grpGerRelSolicitacaoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpGerRelSolicitacaoEntrada.Controls.Add(this.button1);
+            this.grpGerRelSolicitacaoEntrada.Controls.Add(this.btnRelSolEntrada);
             this.grpGerRelSolicitacaoEntrada.Location = new System.Drawing.Point(554, 106);
             this.grpGerRelSolicitacaoEntrada.Name = "grpGerRelSolicitacaoEntrada";
             this.grpGerRelSolicitacaoEntrada.Size = new System.Drawing.Size(447, 86);
@@ -3514,18 +3519,19 @@
             this.grpGerRelSolicitacaoEntrada.TabStop = false;
             this.grpGerRelSolicitacaoEntrada.Text = "Relatório da Solicitações de Entrada";
             // 
-            // button1
+            // btnRelSolEntrada
             // 
-            this.button1.Location = new System.Drawing.Point(284, 54);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 26);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Gerar Relatório";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRelSolEntrada.Location = new System.Drawing.Point(284, 54);
+            this.btnRelSolEntrada.Name = "btnRelSolEntrada";
+            this.btnRelSolEntrada.Size = new System.Drawing.Size(159, 26);
+            this.btnRelSolEntrada.TabIndex = 0;
+            this.btnRelSolEntrada.Text = "Gerar Relatório";
+            this.btnRelSolEntrada.UseVisualStyleBackColor = true;
+            this.btnRelSolEntrada.Click += new System.EventHandler(this.button1_Click);
             // 
             // grpGerRelSolicitacaoSaida
             // 
-            this.grpGerRelSolicitacaoSaida.Controls.Add(this.btnRelSolGerar);
+            this.grpGerRelSolicitacaoSaida.Controls.Add(this.btnRelSolSaida);
             this.grpGerRelSolicitacaoSaida.Location = new System.Drawing.Point(99, 106);
             this.grpGerRelSolicitacaoSaida.Name = "grpGerRelSolicitacaoSaida";
             this.grpGerRelSolicitacaoSaida.Size = new System.Drawing.Size(447, 86);
@@ -3533,15 +3539,15 @@
             this.grpGerRelSolicitacaoSaida.TabStop = false;
             this.grpGerRelSolicitacaoSaida.Text = "Relatório da Solicitações de Saída";
             // 
-            // btnRelSolGerar
+            // btnRelSolSaida
             // 
-            this.btnRelSolGerar.Location = new System.Drawing.Point(284, 52);
-            this.btnRelSolGerar.Name = "btnRelSolGerar";
-            this.btnRelSolGerar.Size = new System.Drawing.Size(159, 26);
-            this.btnRelSolGerar.TabIndex = 0;
-            this.btnRelSolGerar.Text = "Gerar Relatório";
-            this.btnRelSolGerar.UseVisualStyleBackColor = true;
-            this.btnRelSolGerar.Click += new System.EventHandler(this.btnRelSolGerar_Click);
+            this.btnRelSolSaida.Location = new System.Drawing.Point(284, 52);
+            this.btnRelSolSaida.Name = "btnRelSolSaida";
+            this.btnRelSolSaida.Size = new System.Drawing.Size(159, 26);
+            this.btnRelSolSaida.TabIndex = 0;
+            this.btnRelSolSaida.Text = "Gerar Relatório";
+            this.btnRelSolSaida.UseVisualStyleBackColor = true;
+            this.btnRelSolSaida.Click += new System.EventHandler(this.btnRelSolGerar_Click);
             // 
             // timerAtualizaSolicitacoes
             // 
@@ -3580,6 +3586,18 @@
             // relatorioSolicitacaoSaida
             // 
             this.relatorioSolicitacaoSaida.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.relatorioSolicitacaoSaida_PrintPage);
+            // 
+            // relatorioSolicitacaoEntrada
+            // 
+            this.relatorioSolicitacaoEntrada.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.relatorioSolicitacaoEntrada_PrintPage);
+            // 
+            // relatorioVisitantes
+            // 
+            this.relatorioVisitantes.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.relatorioVisitantes_PrintPage);
+            // 
+            // relatorioFonecedores
+            // 
+            this.relatorioFonecedores.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.relatorioFonecedores_PrintPage);
             // 
             // frmPrincipal
             // 
@@ -3899,13 +3917,13 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ComboBox cmbRelAno;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnRelSolGerar;
+        private System.Windows.Forms.Button btnRelSolSaida;
         private System.Windows.Forms.PrintPreviewDialog printPreview;
         private System.Windows.Forms.GroupBox grpGerRelSolicitacaoSaida;
         private System.Windows.Forms.GroupBox grpGerRelSolicitacaoEntrada;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRelSolEntrada;
         private System.Windows.Forms.GroupBox grpGerRelVisitantes;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRelatorioVisitante;
         private System.Windows.Forms.GroupBox grpGerRelFornecedores;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox grpGerRelPermanenciaVeiculo;
@@ -3934,5 +3952,8 @@
         private System.Windows.Forms.Button btnRegistarSaidaFornecedor;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Button button6;
+        private System.Drawing.Printing.PrintDocument relatorioSolicitacaoEntrada;
+        private System.Drawing.Printing.PrintDocument relatorioVisitantes;
+        private System.Drawing.Printing.PrintDocument relatorioFonecedores;
     }
 }
