@@ -1319,25 +1319,19 @@ namespace Sistema.Ifsp.View
             lblPerVeiSerPre1.Enabled = false;
             txtPerVeiSerPre1.Enabled = false;
             txtPerVeiSerPre1.Text = null;
-            lblPerVeiSerPre2.Enabled = false;
             txtPerVeiSerPre2.Enabled = false;
             txtPerVeiSerPre2.Text = null;
-            lblPerVeiSerPre3.Enabled = false;
             txtPerVeiSerPre3.Enabled = false;
             txtPerVeiSerPre3.Text = null;
-            lblPerVeiSerPre4.Enabled = false;
             txtPerVeiSerPre4.Enabled = false;
             txtPerVeiSerPre4.Text = null;
             lblPerVeiPro1.Enabled = false;
             txtPerVeiProntuario1.Enabled = false;
             txtPerVeiProntuario1.Text = null;
-            lblPerVeiPro2.Enabled = false;
             txtPerVeiProntuario2.Enabled = false;
             txtPerVeiProntuario2.Text = null;
-            lblPerVeiPro3.Enabled = false;
             txtPerVeiProntuario3.Enabled = false;
             txtPerVeiProntuario3.Text = null;
-            lblPerVeiPro4.Enabled = false;
             txtPerVeiSerPre4.Enabled = false;
             txtPerVeiProntuario4.Enabled = false;
         }
@@ -1355,29 +1349,22 @@ namespace Sistema.Ifsp.View
             cmbPerVeiSetor.Enabled = true;
             lblPerVeiDocente.Enabled = true;
             cmbPerVeiDocente.Enabled = true;
-
             lblPerVeiSerPre1.Enabled = true;
             txtPerVeiSerPre1.Enabled = true;
-            txtPerVeiSerPre1.Text = null;
-            lblPerVeiSerPre2.Enabled = true;
+            txtPerVeiSerPre1.Text = null;   
             txtPerVeiSerPre2.Enabled = true;
             txtPerVeiSerPre2.Text = null;
-            lblPerVeiSerPre3.Enabled = true;
             txtPerVeiSerPre3.Enabled = true;
             txtPerVeiSerPre3.Text = null;
-            lblPerVeiSerPre4.Enabled = true;
             txtPerVeiSerPre4.Enabled = true;
             txtPerVeiSerPre4.Text = null;
             lblPerVeiPro1.Enabled = true;
             txtPerVeiProntuario1.Enabled = true;
             txtPerVeiProntuario1.Text = null;
-            lblPerVeiPro2.Enabled = true;
             txtPerVeiProntuario2.Enabled = true;
             txtPerVeiProntuario2.Text = null;
-            lblPerVeiPro3.Enabled = true;
             txtPerVeiProntuario3.Enabled = true;
             txtPerVeiProntuario3.Text = null;
-            lblPerVeiPro4.Enabled = true;
             txtPerVeiProntuario4.Enabled = true;
             txtPerVeiProntuario4.Text = null;
         }

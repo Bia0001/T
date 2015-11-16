@@ -197,7 +197,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtPerVeiNome = new System.Windows.Forms.TextBox();
             this.tabPermanenciaVeiculoEncerrar = new System.Windows.Forms.TabPage();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.btnRegistrarSaida = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.dgvPermanenciaVeiculo = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -205,14 +207,15 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.btnCadAltSenCancelar = new System.Windows.Forms.Button();
+            this.btnCadAltSenCadAlt = new System.Windows.Forms.Button();
             this.txtCadAltID = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.cmbCadAltNivelAcesso = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.txtCadAltNome = new System.Windows.Forms.TextBox();
-            this.btnCadAltSenCadAlt = new System.Windows.Forms.Button();
             this.btnCadAltSenPesquisar = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
             this.txtCadAltSenUsuario = new System.Windows.Forms.TextBox();
@@ -228,13 +231,14 @@
             this.rdbCadAltProntuario = new System.Windows.Forms.RadioButton();
             this.rdbCadAltNome = new System.Windows.Forms.RadioButton();
             this.tabManterTerceirizado = new System.Windows.Forms.TabPage();
-            this.txtCadTerArea = new System.Windows.Forms.TextBox();
-            this.btnCadTerSelecionarRegistro = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
             this.btnCadTerExcluir = new System.Windows.Forms.Button();
-            this.btnCadTerCancelar = new System.Windows.Forms.Button();
-            this.btnCadTerSalvar = new System.Windows.Forms.Button();
-            this.btnCadTerAlterar = new System.Windows.Forms.Button();
             this.btnCadTerCadastrar = new System.Windows.Forms.Button();
+            this.btnCadTerCancelar = new System.Windows.Forms.Button();
+            this.btnCadTerAlterar = new System.Windows.Forms.Button();
+            this.btnCadTerSalvar = new System.Windows.Forms.Button();
+            this.btnCadTerSelecionarRegistro = new System.Windows.Forms.Button();
+            this.txtCadTerArea = new System.Windows.Forms.TextBox();
             this.dgvCadTerResultadoPesquisa = new System.Windows.Forms.DataGridView();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -287,8 +291,6 @@
             this.timerAtualizaEstacionamento = new System.Windows.Forms.Timer(this.components);
             this.printPreview = new System.Windows.Forms.PrintPreviewDialog();
             this.relatorioSolicitacaoSaida = new System.Drawing.Printing.PrintDocument();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabSolicitacoes.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -321,11 +323,14 @@
             this.tabPermanenciaVeiculo.SuspendLayout();
             this.panel13.SuspendLayout();
             this.tabPermanenciaVeiculoEncerrar.SuspendLayout();
+            this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermanenciaVeiculo)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grbCadAltSenTipo.SuspendLayout();
             this.tabManterTerceirizado.SuspendLayout();
+            this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadTerResultadoPesquisa)).BeginInit();
             this.grpCadTerTipoPesquisa.SuspendLayout();
             this.tabRelatoriosAlunos.SuspendLayout();
@@ -335,7 +340,6 @@
             this.grpGerRelVisitantes.SuspendLayout();
             this.grpGerRelSolicitacaoEntrada.SuspendLayout();
             this.grpGerRelSolicitacaoSaida.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -360,8 +364,8 @@
             this.tabControl.Location = new System.Drawing.Point(39, 79);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1097, 545);
-            this.tabControl.TabIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1095, 528);
+            this.tabControl.TabIndex = 1;
             this.tabControl.Tag = "";
             // 
             // tabSolicitacoes
@@ -394,7 +398,7 @@
             this.tabSolicitacoes.Location = new System.Drawing.Point(4, 26);
             this.tabSolicitacoes.Name = "tabSolicitacoes";
             this.tabSolicitacoes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSolicitacoes.Size = new System.Drawing.Size(1089, 515);
+            this.tabSolicitacoes.Size = new System.Drawing.Size(1087, 498);
             this.tabSolicitacoes.TabIndex = 0;
             this.tabSolicitacoes.Text = "Gerar Solicitações";
             this.tabSolicitacoes.UseVisualStyleBackColor = true;
@@ -472,7 +476,7 @@
             this.rdbNaoSaidaSupervisionada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbNaoSaidaSupervisionada.AutoSize = true;
-            this.rdbNaoSaidaSupervisionada.Location = new System.Drawing.Point(980, 118);
+            this.rdbNaoSaidaSupervisionada.Location = new System.Drawing.Point(978, 118);
             this.rdbNaoSaidaSupervisionada.Name = "rdbNaoSaidaSupervisionada";
             this.rdbNaoSaidaSupervisionada.Size = new System.Drawing.Size(52, 21);
             this.rdbNaoSaidaSupervisionada.TabIndex = 9;
@@ -485,7 +489,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbSimSaidaSupervisionada.AutoSize = true;
             this.rdbSimSaidaSupervisionada.Checked = true;
-            this.rdbSimSaidaSupervisionada.Location = new System.Drawing.Point(980, 94);
+            this.rdbSimSaidaSupervisionada.Location = new System.Drawing.Point(978, 94);
             this.rdbSimSaidaSupervisionada.Name = "rdbSimSaidaSupervisionada";
             this.rdbSimSaidaSupervisionada.Size = new System.Drawing.Size(52, 21);
             this.rdbSimSaidaSupervisionada.TabIndex = 8;
@@ -498,7 +502,7 @@
             this.lblSaidaSupervisionada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSaidaSupervisionada.AutoSize = true;
-            this.lblSaidaSupervisionada.Location = new System.Drawing.Point(821, 93);
+            this.lblSaidaSupervisionada.Location = new System.Drawing.Point(819, 93);
             this.lblSaidaSupervisionada.Name = "lblSaidaSupervisionada";
             this.lblSaidaSupervisionada.Size = new System.Drawing.Size(153, 17);
             this.lblSaidaSupervisionada.TabIndex = 0;
@@ -511,9 +515,9 @@
             this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel1.Controls.Add(this.btnGerarSolicitacaoAluno);
             this.panel1.Controls.Add(this.btnCancelarSolicitação);
-            this.panel1.Location = new System.Drawing.Point(1, 456);
+            this.panel1.Location = new System.Drawing.Point(1, 439);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1092, 56);
+            this.panel1.Size = new System.Drawing.Size(1090, 56);
             this.panel1.TabIndex = 29;
             // 
             // btnGerarSolicitacaoAluno
@@ -521,7 +525,7 @@
             this.btnGerarSolicitacaoAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGerarSolicitacaoAluno.BackColor = System.Drawing.Color.White;
             this.btnGerarSolicitacaoAluno.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
-            this.btnGerarSolicitacaoAluno.Location = new System.Drawing.Point(1015, 6);
+            this.btnGerarSolicitacaoAluno.Location = new System.Drawing.Point(1013, 6);
             this.btnGerarSolicitacaoAluno.Name = "btnGerarSolicitacaoAluno";
             this.btnGerarSolicitacaoAluno.Size = new System.Drawing.Size(51, 44);
             this.btnGerarSolicitacaoAluno.TabIndex = 11;
@@ -534,7 +538,7 @@
             this.btnCancelarSolicitação.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarSolicitação.BackColor = System.Drawing.Color.White;
             this.btnCancelarSolicitação.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
-            this.btnCancelarSolicitação.Location = new System.Drawing.Point(958, 6);
+            this.btnCancelarSolicitação.Location = new System.Drawing.Point(956, 6);
             this.btnCancelarSolicitação.Name = "btnCancelarSolicitação";
             this.btnCancelarSolicitação.Size = new System.Drawing.Size(51, 44);
             this.btnCancelarSolicitação.TabIndex = 12;
@@ -551,7 +555,7 @@
             this.txtMotivoAluno.Location = new System.Drawing.Point(49, 357);
             this.txtMotivoAluno.Multiline = true;
             this.txtMotivoAluno.Name = "txtMotivoAluno";
-            this.txtMotivoAluno.Size = new System.Drawing.Size(989, 82);
+            this.txtMotivoAluno.Size = new System.Drawing.Size(987, 65);
             this.txtMotivoAluno.TabIndex = 10;
             // 
             // txtPesquisarAluno
@@ -571,7 +575,7 @@
             this.ckbSolicitacaoSaida.AutoSize = true;
             this.ckbSolicitacaoSaida.Checked = true;
             this.ckbSolicitacaoSaida.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbSolicitacaoSaida.Location = new System.Drawing.Point(558, 27);
+            this.ckbSolicitacaoSaida.Location = new System.Drawing.Point(556, 27);
             this.ckbSolicitacaoSaida.Name = "ckbSolicitacaoSaida";
             this.ckbSolicitacaoSaida.Size = new System.Drawing.Size(200, 21);
             this.ckbSolicitacaoSaida.TabIndex = 4;
@@ -584,7 +588,7 @@
             this.ckbSolicitacaoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbSolicitacaoEntrada.AutoSize = true;
-            this.ckbSolicitacaoEntrada.Location = new System.Drawing.Point(558, 55);
+            this.ckbSolicitacaoEntrada.Location = new System.Drawing.Point(556, 55);
             this.ckbSolicitacaoEntrada.Name = "ckbSolicitacaoEntrada";
             this.ckbSolicitacaoEntrada.Size = new System.Drawing.Size(214, 21);
             this.ckbSolicitacaoEntrada.TabIndex = 5;
@@ -597,7 +601,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(556, 149);
+            this.label8.Location = new System.Drawing.Point(554, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(138, 17);
             this.label8.TabIndex = 0;
@@ -608,7 +612,7 @@
             this.txtProntuarioAluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProntuarioAluno.Enabled = false;
-            this.txtProntuarioAluno.Location = new System.Drawing.Point(559, 170);
+            this.txtProntuarioAluno.Location = new System.Drawing.Point(557, 170);
             this.txtProntuarioAluno.Name = "txtProntuarioAluno";
             this.txtProntuarioAluno.ReadOnly = true;
             this.txtProntuarioAluno.Size = new System.Drawing.Size(480, 25);
@@ -652,7 +656,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(556, 276);
+            this.label5.Location = new System.Drawing.Point(554, 276);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 17);
             this.label5.TabIndex = 0;
@@ -663,7 +667,7 @@
             this.txtContato2Aluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContato2Aluno.Enabled = false;
-            this.txtContato2Aluno.Location = new System.Drawing.Point(559, 297);
+            this.txtContato2Aluno.Location = new System.Drawing.Point(557, 297);
             this.txtContato2Aluno.Name = "txtContato2Aluno";
             this.txtContato2Aluno.ReadOnly = true;
             this.txtContato2Aluno.Size = new System.Drawing.Size(480, 25);
@@ -685,7 +689,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(556, 211);
+            this.label3.Location = new System.Drawing.Point(554, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(173, 17);
             this.label3.TabIndex = 0;
@@ -718,7 +722,7 @@
             this.txtResponsavel2Aluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtResponsavel2Aluno.Enabled = false;
-            this.txtResponsavel2Aluno.Location = new System.Drawing.Point(559, 232);
+            this.txtResponsavel2Aluno.Location = new System.Drawing.Point(557, 232);
             this.txtResponsavel2Aluno.Name = "txtResponsavel2Aluno";
             this.txtResponsavel2Aluno.ReadOnly = true;
             this.txtResponsavel2Aluno.Size = new System.Drawing.Size(480, 25);
@@ -761,15 +765,14 @@
             this.tabCadastrarUsoEstacionamento.Location = new System.Drawing.Point(4, 26);
             this.tabCadastrarUsoEstacionamento.Name = "tabCadastrarUsoEstacionamento";
             this.tabCadastrarUsoEstacionamento.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCadastrarUsoEstacionamento.Size = new System.Drawing.Size(1089, 515);
+            this.tabCadastrarUsoEstacionamento.Size = new System.Drawing.Size(1087, 498);
             this.tabCadastrarUsoEstacionamento.TabIndex = 1;
             this.tabCadastrarUsoEstacionamento.Text = "Cadastrar Uso do Estacionamento";
             this.tabCadastrarUsoEstacionamento.UseVisualStyleBackColor = true;
             // 
             // panel12
             // 
-            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.Controls.Add(this.cmbDocente);
             this.panel12.Controls.Add(this.lblDocente);
@@ -777,7 +780,7 @@
             this.panel12.Controls.Add(this.txtCodigoPlaca);
             this.panel12.Location = new System.Drawing.Point(82, 356);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(917, 79);
+            this.panel12.Size = new System.Drawing.Size(915, 88);
             this.panel12.TabIndex = 18;
             // 
             // cmbDocente
@@ -792,7 +795,7 @@
             this.cmbDocente.Location = new System.Drawing.Point(3, 39);
             this.cmbDocente.Name = "cmbDocente";
             this.cmbDocente.Size = new System.Drawing.Size(121, 25);
-            this.cmbDocente.TabIndex = 15;
+            this.cmbDocente.TabIndex = 0;
             this.cmbDocente.Text = "Não";
             this.cmbDocente.SelectedIndexChanged += new System.EventHandler(this.cmbDocente_SelectedIndexChanged);
             // 
@@ -820,7 +823,7 @@
             this.txtCodigoPlaca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigoPlaca.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCodigoPlaca.Location = new System.Drawing.Point(525, 39);
+            this.txtCodigoPlaca.Location = new System.Drawing.Point(523, 39);
             this.txtCodigoPlaca.Name = "txtCodigoPlaca";
             this.txtCodigoPlaca.Size = new System.Drawing.Size(379, 25);
             this.txtCodigoPlaca.TabIndex = 0;
@@ -830,7 +833,7 @@
             // 
             this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel11.Controls.Add(this.btnPesquisarPessoaEstacionamento);
-            this.panel11.Location = new System.Drawing.Point(943, 77);
+            this.panel11.Location = new System.Drawing.Point(941, 77);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(50, 49);
             this.panel11.TabIndex = 17;
@@ -843,7 +846,7 @@
             this.btnPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(0, 3);
             this.btnPesquisarPessoaEstacionamento.Name = "btnPesquisarPessoaEstacionamento";
             this.btnPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(42, 38);
-            this.btnPesquisarPessoaEstacionamento.TabIndex = 10;
+            this.btnPesquisarPessoaEstacionamento.TabIndex = 0;
             this.toolTip1.SetToolTip(this.btnPesquisarPessoaEstacionamento, "Pesquisar");
             this.btnPesquisarPessoaEstacionamento.UseVisualStyleBackColor = false;
             this.btnPesquisarPessoaEstacionamento.Click += new System.EventHandler(this.btnPesquisarPessoaEstacionamento_Click);
@@ -857,9 +860,9 @@
             this.panel8.Controls.Add(this.btnAlterar);
             this.panel8.Controls.Add(this.btnCancelarEstacionamento);
             this.panel8.Controls.Add(this.btnSalvarUsoEstacionamento);
-            this.panel8.Location = new System.Drawing.Point(0, 463);
+            this.panel8.Location = new System.Drawing.Point(0, 446);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1089, 52);
+            this.panel8.Size = new System.Drawing.Size(1087, 52);
             this.panel8.TabIndex = 13;
             // 
             // btnDeletar
@@ -867,10 +870,10 @@
             this.btnDeletar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnDeletar.BackColor = System.Drawing.SystemColors.Control;
             this.btnDeletar.Image = global::Sistema.Ifsp.View.Properties.Resources._1;
-            this.btnDeletar.Location = new System.Drawing.Point(958, 3);
+            this.btnDeletar.Location = new System.Drawing.Point(973, 3);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(51, 44);
-            this.btnDeletar.TabIndex = 17;
+            this.btnDeletar.TabIndex = 1;
             this.btnDeletar.UseVisualStyleBackColor = false;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
@@ -879,10 +882,10 @@
             this.btnAlterar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAlterar.BackColor = System.Drawing.SystemColors.Control;
             this.btnAlterar.Image = global::Sistema.Ifsp.View.Properties.Resources._121;
-            this.btnAlterar.Location = new System.Drawing.Point(1015, 3);
+            this.btnAlterar.Location = new System.Drawing.Point(916, 3);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(51, 44);
-            this.btnAlterar.TabIndex = 16;
+            this.btnAlterar.TabIndex = 0;
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -891,10 +894,10 @@
             this.btnCancelarEstacionamento.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnCancelarEstacionamento.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancelarEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
-            this.btnCancelarEstacionamento.Location = new System.Drawing.Point(847, 3);
+            this.btnCancelarEstacionamento.Location = new System.Drawing.Point(859, 3);
             this.btnCancelarEstacionamento.Name = "btnCancelarEstacionamento";
             this.btnCancelarEstacionamento.Size = new System.Drawing.Size(51, 44);
-            this.btnCancelarEstacionamento.TabIndex = 15;
+            this.btnCancelarEstacionamento.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnCancelarEstacionamento, "Cancelar");
             this.btnCancelarEstacionamento.UseVisualStyleBackColor = false;
             this.btnCancelarEstacionamento.Click += new System.EventHandler(this.btnCancelarEstacionamento_Click);
@@ -904,10 +907,10 @@
             this.btnSalvarUsoEstacionamento.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSalvarUsoEstacionamento.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalvarUsoEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
-            this.btnSalvarUsoEstacionamento.Location = new System.Drawing.Point(904, 3);
+            this.btnSalvarUsoEstacionamento.Location = new System.Drawing.Point(1030, 4);
             this.btnSalvarUsoEstacionamento.Name = "btnSalvarUsoEstacionamento";
             this.btnSalvarUsoEstacionamento.Size = new System.Drawing.Size(51, 44);
-            this.btnSalvarUsoEstacionamento.TabIndex = 7;
+            this.btnSalvarUsoEstacionamento.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btnSalvarUsoEstacionamento, "Salvar");
             this.btnSalvarUsoEstacionamento.UseVisualStyleBackColor = false;
             this.btnSalvarUsoEstacionamento.Click += new System.EventHandler(this.btnSalvarEstacionamento_Click);
@@ -930,8 +933,8 @@
             this.txtPesquisarPessoaEstacionamento.BackColor = System.Drawing.SystemColors.Control;
             this.txtPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(82, 88);
             this.txtPesquisarPessoaEstacionamento.Name = "txtPesquisarPessoaEstacionamento";
-            this.txtPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(855, 25);
-            this.txtPesquisarPessoaEstacionamento.TabIndex = 1;
+            this.txtPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(853, 25);
+            this.txtPesquisarPessoaEstacionamento.TabIndex = 2;
             // 
             // rdbNomeEstacionamento
             // 
@@ -979,7 +982,7 @@
             this.grpDiasDaSemana.Controls.Add(this.cmbSegunda);
             this.grpDiasDaSemana.Location = new System.Drawing.Point(82, 179);
             this.grpDiasDaSemana.Name = "grpDiasDaSemana";
-            this.grpDiasDaSemana.Size = new System.Drawing.Size(905, 158);
+            this.grpDiasDaSemana.Size = new System.Drawing.Size(903, 158);
             this.grpDiasDaSemana.TabIndex = 6;
             this.grpDiasDaSemana.TabStop = false;
             this.grpDiasDaSemana.Text = "Dias da Semana:";
@@ -1062,7 +1065,7 @@
             this.cmbDomingo.Location = new System.Drawing.Point(597, 85);
             this.cmbDomingo.Name = "cmbDomingo";
             this.cmbDomingo.Size = new System.Drawing.Size(204, 25);
-            this.cmbDomingo.TabIndex = 13;
+            this.cmbDomingo.TabIndex = 6;
             this.cmbDomingo.Text = "Sem uso";
             // 
             // cmbSabado
@@ -1080,7 +1083,7 @@
             this.cmbSabado.Location = new System.Drawing.Point(597, 54);
             this.cmbSabado.Name = "cmbSabado";
             this.cmbSabado.Size = new System.Drawing.Size(204, 25);
-            this.cmbSabado.TabIndex = 12;
+            this.cmbSabado.TabIndex = 5;
             this.cmbSabado.Text = "Sem uso";
             // 
             // cmbSexta
@@ -1098,7 +1101,7 @@
             this.cmbSexta.Location = new System.Drawing.Point(597, 19);
             this.cmbSexta.Name = "cmbSexta";
             this.cmbSexta.Size = new System.Drawing.Size(204, 25);
-            this.cmbSexta.TabIndex = 11;
+            this.cmbSexta.TabIndex = 4;
             this.cmbSexta.Text = "Sem uso";
             // 
             // cmbQuinta
@@ -1116,7 +1119,7 @@
             this.cmbQuinta.Location = new System.Drawing.Point(196, 113);
             this.cmbQuinta.Name = "cmbQuinta";
             this.cmbQuinta.Size = new System.Drawing.Size(204, 25);
-            this.cmbQuinta.TabIndex = 10;
+            this.cmbQuinta.TabIndex = 3;
             this.cmbQuinta.Text = "Sem uso";
             // 
             // cmbQuarta
@@ -1134,7 +1137,7 @@
             this.cmbQuarta.Location = new System.Drawing.Point(196, 82);
             this.cmbQuarta.Name = "cmbQuarta";
             this.cmbQuarta.Size = new System.Drawing.Size(204, 25);
-            this.cmbQuarta.TabIndex = 9;
+            this.cmbQuarta.TabIndex = 2;
             this.cmbQuarta.Text = "Sem uso";
             // 
             // cmbTerca
@@ -1152,7 +1155,7 @@
             this.cmbTerca.Location = new System.Drawing.Point(196, 53);
             this.cmbTerca.Name = "cmbTerca";
             this.cmbTerca.Size = new System.Drawing.Size(204, 25);
-            this.cmbTerca.TabIndex = 8;
+            this.cmbTerca.TabIndex = 1;
             this.cmbTerca.Text = "Sem uso";
             // 
             // cmbSegunda
@@ -1170,7 +1173,7 @@
             this.cmbSegunda.Location = new System.Drawing.Point(196, 22);
             this.cmbSegunda.Name = "cmbSegunda";
             this.cmbSegunda.Size = new System.Drawing.Size(204, 25);
-            this.cmbSegunda.TabIndex = 7;
+            this.cmbSegunda.TabIndex = 0;
             this.cmbSegunda.Text = "Sem uso";
             // 
             // label15
@@ -1192,7 +1195,7 @@
             this.txtRequisitandoEstacionamento.Location = new System.Drawing.Point(82, 148);
             this.txtRequisitandoEstacionamento.Name = "txtRequisitandoEstacionamento";
             this.txtRequisitandoEstacionamento.ReadOnly = true;
-            this.txtRequisitandoEstacionamento.Size = new System.Drawing.Size(905, 25);
+            this.txtRequisitandoEstacionamento.Size = new System.Drawing.Size(903, 25);
             this.txtRequisitandoEstacionamento.TabIndex = 3;
             // 
             // tabSolicitacoesSaidaFinalizadasExpiradas
@@ -1204,7 +1207,7 @@
             this.tabSolicitacoesSaidaFinalizadasExpiradas.Location = new System.Drawing.Point(4, 26);
             this.tabSolicitacoesSaidaFinalizadasExpiradas.Name = "tabSolicitacoesSaidaFinalizadasExpiradas";
             this.tabSolicitacoesSaidaFinalizadasExpiradas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSolicitacoesSaidaFinalizadasExpiradas.Size = new System.Drawing.Size(1089, 515);
+            this.tabSolicitacoesSaidaFinalizadasExpiradas.Size = new System.Drawing.Size(1087, 498);
             this.tabSolicitacoesSaidaFinalizadasExpiradas.TabIndex = 2;
             this.tabSolicitacoesSaidaFinalizadasExpiradas.Text = "Solicitações de Saída Finalizadas e Expiradas";
             this.tabSolicitacoesSaidaFinalizadasExpiradas.UseVisualStyleBackColor = true;
@@ -1214,7 +1217,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel3.Controls.Add(this.label13);
-            this.panel3.Location = new System.Drawing.Point(544, 32);
+            this.panel3.Location = new System.Drawing.Point(542, 32);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(490, 32);
             this.panel3.TabIndex = 5;
@@ -1263,11 +1266,11 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dgvSolicitacoesExpiradas.Location = new System.Drawing.Point(544, 70);
+            this.dgvSolicitacoesExpiradas.Location = new System.Drawing.Point(542, 70);
             this.dgvSolicitacoesExpiradas.MultiSelect = false;
             this.dgvSolicitacoesExpiradas.Name = "dgvSolicitacoesExpiradas";
             this.dgvSolicitacoesExpiradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitacoesExpiradas.Size = new System.Drawing.Size(490, 420);
+            this.dgvSolicitacoesExpiradas.Size = new System.Drawing.Size(490, 403);
             this.dgvSolicitacoesExpiradas.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -1311,7 +1314,7 @@
             this.dgvSolicitacoesFinalizadas.MultiSelect = false;
             this.dgvSolicitacoesFinalizadas.Name = "dgvSolicitacoesFinalizadas";
             this.dgvSolicitacoesFinalizadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitacoesFinalizadas.Size = new System.Drawing.Size(490, 420);
+            this.dgvSolicitacoesFinalizadas.Size = new System.Drawing.Size(490, 403);
             this.dgvSolicitacoesFinalizadas.TabIndex = 0;
             // 
             // Column1
@@ -1345,7 +1348,7 @@
             this.tabSolicitacoesSaidaAbertas.Location = new System.Drawing.Point(4, 26);
             this.tabSolicitacoesSaidaAbertas.Name = "tabSolicitacoesSaidaAbertas";
             this.tabSolicitacoesSaidaAbertas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSolicitacoesSaidaAbertas.Size = new System.Drawing.Size(1089, 515);
+            this.tabSolicitacoesSaidaAbertas.Size = new System.Drawing.Size(1087, 498);
             this.tabSolicitacoesSaidaAbertas.TabIndex = 3;
             this.tabSolicitacoesSaidaAbertas.Text = "Solicitações de Saída Abertas";
             this.tabSolicitacoesSaidaAbertas.UseVisualStyleBackColor = true;
@@ -1356,9 +1359,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel5.Controls.Add(this.btnFinalizarSolicitacao);
-            this.panel5.Location = new System.Drawing.Point(3, 460);
+            this.panel5.Location = new System.Drawing.Point(3, 443);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1083, 52);
+            this.panel5.Size = new System.Drawing.Size(1081, 52);
             this.panel5.TabIndex = 5;
             // 
             // btnFinalizarSolicitacao
@@ -1366,10 +1369,10 @@
             this.btnFinalizarSolicitacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFinalizarSolicitacao.BackColor = System.Drawing.Color.White;
             this.btnFinalizarSolicitacao.Image = global::Sistema.Ifsp.View.Properties.Resources._13;
-            this.btnFinalizarSolicitacao.Location = new System.Drawing.Point(1019, 5);
+            this.btnFinalizarSolicitacao.Location = new System.Drawing.Point(1017, 5);
             this.btnFinalizarSolicitacao.Name = "btnFinalizarSolicitacao";
             this.btnFinalizarSolicitacao.Size = new System.Drawing.Size(51, 44);
-            this.btnFinalizarSolicitacao.TabIndex = 3;
+            this.btnFinalizarSolicitacao.TabIndex = 0;
             this.toolTip1.SetToolTip(this.btnFinalizarSolicitacao, "Finalizar Solicitação");
             this.btnFinalizarSolicitacao.UseVisualStyleBackColor = false;
             this.btnFinalizarSolicitacao.Click += new System.EventHandler(this.btnFinalizarSolicitacao_Click);
@@ -1393,7 +1396,7 @@
             this.dgvSolicitacoesAbertas.MultiSelect = false;
             this.dgvSolicitacoesAbertas.Name = "dgvSolicitacoesAbertas";
             this.dgvSolicitacoesAbertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitacoesAbertas.Size = new System.Drawing.Size(1009, 370);
+            this.dgvSolicitacoesAbertas.Size = new System.Drawing.Size(1007, 353);
             this.dgvSolicitacoesAbertas.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn5
@@ -1441,7 +1444,7 @@
             this.tabEntradaVisitanteForncedor.Location = new System.Drawing.Point(4, 26);
             this.tabEntradaVisitanteForncedor.Name = "tabEntradaVisitanteForncedor";
             this.tabEntradaVisitanteForncedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEntradaVisitanteForncedor.Size = new System.Drawing.Size(1089, 515);
+            this.tabEntradaVisitanteForncedor.Size = new System.Drawing.Size(1087, 498);
             this.tabEntradaVisitanteForncedor.TabIndex = 4;
             this.tabEntradaVisitanteForncedor.Text = "Registrar Entrada de Visitante/Forncedor";
             this.tabEntradaVisitanteForncedor.UseVisualStyleBackColor = true;
@@ -1453,9 +1456,9 @@
             this.panel4.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel4.Controls.Add(this.btnCancelarRegistro);
             this.panel4.Controls.Add(this.btnRegistrarEntradaFornecedorVisitante);
-            this.panel4.Location = new System.Drawing.Point(0, 463);
+            this.panel4.Location = new System.Drawing.Point(0, 446);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1087, 52);
+            this.panel4.Size = new System.Drawing.Size(1085, 52);
             this.panel4.TabIndex = 15;
             // 
             // btnCancelarRegistro
@@ -1463,10 +1466,10 @@
             this.btnCancelarRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarRegistro.BackColor = System.Drawing.Color.White;
             this.btnCancelarRegistro.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
-            this.btnCancelarRegistro.Location = new System.Drawing.Point(964, 5);
+            this.btnCancelarRegistro.Location = new System.Drawing.Point(962, 5);
             this.btnCancelarRegistro.Name = "btnCancelarRegistro";
             this.btnCancelarRegistro.Size = new System.Drawing.Size(51, 44);
-            this.btnCancelarRegistro.TabIndex = 15;
+            this.btnCancelarRegistro.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnCancelarRegistro, "Cancelar Registro");
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
             this.btnCancelarRegistro.Click += new System.EventHandler(this.btnCancelarRegistro_Click);
@@ -1476,10 +1479,10 @@
             this.btnRegistrarEntradaFornecedorVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistrarEntradaFornecedorVisitante.BackColor = System.Drawing.Color.White;
             this.btnRegistrarEntradaFornecedorVisitante.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
-            this.btnRegistrarEntradaFornecedorVisitante.Location = new System.Drawing.Point(1021, 5);
+            this.btnRegistrarEntradaFornecedorVisitante.Location = new System.Drawing.Point(1019, 5);
             this.btnRegistrarEntradaFornecedorVisitante.Name = "btnRegistrarEntradaFornecedorVisitante";
             this.btnRegistrarEntradaFornecedorVisitante.Size = new System.Drawing.Size(51, 44);
-            this.btnRegistrarEntradaFornecedorVisitante.TabIndex = 14;
+            this.btnRegistrarEntradaFornecedorVisitante.TabIndex = 0;
             this.toolTip1.SetToolTip(this.btnRegistrarEntradaFornecedorVisitante, "Registrar");
             this.btnRegistrarEntradaFornecedorVisitante.UseVisualStyleBackColor = false;
             this.btnRegistrarEntradaFornecedorVisitante.Click += new System.EventHandler(this.btnRegistrarEntradaFornecedorVisitante_Click);
@@ -1502,7 +1505,7 @@
             this.rdbFornecedor.Location = new System.Drawing.Point(19, 36);
             this.rdbFornecedor.Name = "rdbFornecedor";
             this.rdbFornecedor.Size = new System.Drawing.Size(101, 21);
-            this.rdbFornecedor.TabIndex = 12;
+            this.rdbFornecedor.TabIndex = 0;
             this.rdbFornecedor.TabStop = true;
             this.rdbFornecedor.Text = "Fornecedor";
             this.rdbFornecedor.UseVisualStyleBackColor = true;
@@ -1513,7 +1516,7 @@
             this.rdbVisitante.Location = new System.Drawing.Point(135, 36);
             this.rdbVisitante.Name = "rdbVisitante";
             this.rdbVisitante.Size = new System.Drawing.Size(81, 21);
-            this.rdbVisitante.TabIndex = 11;
+            this.rdbVisitante.TabIndex = 1;
             this.rdbVisitante.Text = "Visitante";
             this.rdbVisitante.UseVisualStyleBackColor = true;
             // 
@@ -1538,8 +1541,8 @@
             this.txtMotivoFornecedorVisitante.Location = new System.Drawing.Point(53, 286);
             this.txtMotivoFornecedorVisitante.Multiline = true;
             this.txtMotivoFornecedorVisitante.Name = "txtMotivoFornecedorVisitante";
-            this.txtMotivoFornecedorVisitante.Size = new System.Drawing.Size(970, 119);
-            this.txtMotivoFornecedorVisitante.TabIndex = 9;
+            this.txtMotivoFornecedorVisitante.Size = new System.Drawing.Size(968, 102);
+            this.txtMotivoFornecedorVisitante.TabIndex = 3;
             this.txtMotivoFornecedorVisitante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMotivoFornecedorVisitante_KeyPress);
             // 
             // label18
@@ -1562,8 +1565,8 @@
             this.txtEmpresaFornecedorVisitante.BackColor = System.Drawing.SystemColors.Control;
             this.txtEmpresaFornecedorVisitante.Location = new System.Drawing.Point(502, 198);
             this.txtEmpresaFornecedorVisitante.Name = "txtEmpresaFornecedorVisitante";
-            this.txtEmpresaFornecedorVisitante.Size = new System.Drawing.Size(521, 25);
-            this.txtEmpresaFornecedorVisitante.TabIndex = 7;
+            this.txtEmpresaFornecedorVisitante.Size = new System.Drawing.Size(519, 25);
+            this.txtEmpresaFornecedorVisitante.TabIndex = 2;
             this.txtEmpresaFornecedorVisitante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmpresaFornecedorVisitante_KeyPress);
             // 
             // label17
@@ -1586,8 +1589,8 @@
             this.txtRgFornecedorVisitante.BackColor = System.Drawing.SystemColors.Control;
             this.txtRgFornecedorVisitante.Location = new System.Drawing.Point(502, 141);
             this.txtRgFornecedorVisitante.Name = "txtRgFornecedorVisitante";
-            this.txtRgFornecedorVisitante.Size = new System.Drawing.Size(521, 25);
-            this.txtRgFornecedorVisitante.TabIndex = 5;
+            this.txtRgFornecedorVisitante.Size = new System.Drawing.Size(519, 25);
+            this.txtRgFornecedorVisitante.TabIndex = 1;
             this.txtRgFornecedorVisitante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRgFornecedorVisitante_KeyPress);
             // 
             // label16
@@ -1610,7 +1613,7 @@
             this.txtNomeFornecedorVisitante.BackColor = System.Drawing.SystemColors.Control;
             this.txtNomeFornecedorVisitante.Location = new System.Drawing.Point(502, 85);
             this.txtNomeFornecedorVisitante.Name = "txtNomeFornecedorVisitante";
-            this.txtNomeFornecedorVisitante.Size = new System.Drawing.Size(521, 25);
+            this.txtNomeFornecedorVisitante.Size = new System.Drawing.Size(519, 25);
             this.txtNomeFornecedorVisitante.TabIndex = 0;
             this.txtNomeFornecedorVisitante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeFornecedorVisitante_KeyPress);
             // 
@@ -1621,7 +1624,7 @@
             this.tabRegistrarSaidaFornecedor.Location = new System.Drawing.Point(4, 26);
             this.tabRegistrarSaidaFornecedor.Name = "tabRegistrarSaidaFornecedor";
             this.tabRegistrarSaidaFornecedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistrarSaidaFornecedor.Size = new System.Drawing.Size(1089, 515);
+            this.tabRegistrarSaidaFornecedor.Size = new System.Drawing.Size(1087, 498);
             this.tabRegistrarSaidaFornecedor.TabIndex = 5;
             this.tabRegistrarSaidaFornecedor.Text = "Regitrar Saída de Fornecedor";
             this.tabRegistrarSaidaFornecedor.UseVisualStyleBackColor = true;
@@ -1632,20 +1635,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel6.Controls.Add(this.btnRegistarSaidaFornecedor);
-            this.panel6.Location = new System.Drawing.Point(0, 464);
+            this.panel6.Location = new System.Drawing.Point(0, 447);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1089, 51);
+            this.panel6.Size = new System.Drawing.Size(1087, 51);
             this.panel6.TabIndex = 16;
             // 
             // btnRegistarSaidaFornecedor
             // 
             this.btnRegistarSaidaFornecedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistarSaidaFornecedor.BackColor = System.Drawing.Color.White;
+            this.btnRegistarSaidaFornecedor.BackColor = System.Drawing.Color.Gainsboro;
             this.btnRegistarSaidaFornecedor.Image = global::Sistema.Ifsp.View.Properties.Resources._13;
-            this.btnRegistarSaidaFornecedor.Location = new System.Drawing.Point(1021, 3);
+            this.btnRegistarSaidaFornecedor.Location = new System.Drawing.Point(1019, 3);
             this.btnRegistarSaidaFornecedor.Name = "btnRegistarSaidaFornecedor";
             this.btnRegistarSaidaFornecedor.Size = new System.Drawing.Size(51, 44);
-            this.btnRegistarSaidaFornecedor.TabIndex = 1;
+            this.btnRegistarSaidaFornecedor.TabIndex = 0;
             this.toolTip1.SetToolTip(this.btnRegistarSaidaFornecedor, "Registrar Saída de Fornecedor");
             this.btnRegistarSaidaFornecedor.UseVisualStyleBackColor = false;
             this.btnRegistarSaidaFornecedor.Click += new System.EventHandler(this.btnRegistarSaidaFornecedor_Click);
@@ -1667,7 +1670,7 @@
             this.dgvFornecedores.MultiSelect = false;
             this.dgvFornecedores.Name = "dgvFornecedores";
             this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFornecedores.Size = new System.Drawing.Size(966, 386);
+            this.dgvFornecedores.Size = new System.Drawing.Size(964, 386);
             this.dgvFornecedores.TabIndex = 0;
             // 
             // Column5
@@ -1701,7 +1704,7 @@
             this.tabRegistrarSaidaVisitante.Location = new System.Drawing.Point(4, 26);
             this.tabRegistrarSaidaVisitante.Name = "tabRegistrarSaidaVisitante";
             this.tabRegistrarSaidaVisitante.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistrarSaidaVisitante.Size = new System.Drawing.Size(1089, 515);
+            this.tabRegistrarSaidaVisitante.Size = new System.Drawing.Size(1087, 498);
             this.tabRegistrarSaidaVisitante.TabIndex = 6;
             this.tabRegistrarSaidaVisitante.Text = "Registrar Saída de Visitante";
             this.tabRegistrarSaidaVisitante.UseVisualStyleBackColor = true;
@@ -1712,9 +1715,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel7.Controls.Add(this.btnResgistrarSaidaVisitante);
-            this.panel7.Location = new System.Drawing.Point(0, 539);
+            this.panel7.Location = new System.Drawing.Point(0, 522);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1209, 48);
+            this.panel7.Size = new System.Drawing.Size(1207, 48);
             this.panel7.TabIndex = 17;
             // 
             // btnResgistrarSaidaVisitante
@@ -1722,7 +1725,7 @@
             this.btnResgistrarSaidaVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnResgistrarSaidaVisitante.BackColor = System.Drawing.Color.White;
             this.btnResgistrarSaidaVisitante.Image = global::Sistema.Ifsp.View.Properties.Resources._13;
-            this.btnResgistrarSaidaVisitante.Location = new System.Drawing.Point(1138, 1);
+            this.btnResgistrarSaidaVisitante.Location = new System.Drawing.Point(1136, 1);
             this.btnResgistrarSaidaVisitante.Name = "btnResgistrarSaidaVisitante";
             this.btnResgistrarSaidaVisitante.Size = new System.Drawing.Size(51, 44);
             this.btnResgistrarSaidaVisitante.TabIndex = 2;
@@ -1744,11 +1747,11 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
-            this.dgvVisitante.Location = new System.Drawing.Point(61, 39);
+            this.dgvVisitante.Location = new System.Drawing.Point(66, 24);
             this.dgvVisitante.MultiSelect = false;
             this.dgvVisitante.Name = "dgvVisitante";
             this.dgvVisitante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVisitante.Size = new System.Drawing.Size(1078, 474);
+            this.dgvVisitante.Size = new System.Drawing.Size(963, 404);
             this.dgvVisitante.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn9
@@ -1781,7 +1784,7 @@
             this.tabEstacionamento.Controls.Add(this.label27);
             this.tabEstacionamento.Location = new System.Drawing.Point(4, 26);
             this.tabEstacionamento.Name = "tabEstacionamento";
-            this.tabEstacionamento.Size = new System.Drawing.Size(1089, 515);
+            this.tabEstacionamento.Size = new System.Drawing.Size(1087, 498);
             this.tabEstacionamento.TabIndex = 7;
             this.tabEstacionamento.Text = "Estacionamento";
             this.tabEstacionamento.UseVisualStyleBackColor = true;
@@ -1850,7 +1853,7 @@
             this.tabPermanenciaVeiculo.Location = new System.Drawing.Point(4, 26);
             this.tabPermanenciaVeiculo.Name = "tabPermanenciaVeiculo";
             this.tabPermanenciaVeiculo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPermanenciaVeiculo.Size = new System.Drawing.Size(1089, 515);
+            this.tabPermanenciaVeiculo.Size = new System.Drawing.Size(1087, 498);
             this.tabPermanenciaVeiculo.TabIndex = 8;
             this.tabPermanenciaVeiculo.Text = "Cadastrar permanência de veículo";
             this.tabPermanenciaVeiculo.UseVisualStyleBackColor = true;
@@ -1862,40 +1865,40 @@
             this.panel13.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel13.Controls.Add(this.btnPerVeiCancelar);
             this.panel13.Controls.Add(this.brnCadastrar);
-            this.panel13.Location = new System.Drawing.Point(0, 460);
+            this.panel13.Location = new System.Drawing.Point(0, 443);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1093, 55);
+            this.panel13.Size = new System.Drawing.Size(1091, 55);
             this.panel13.TabIndex = 53;
             // 
             // btnPerVeiCancelar
             // 
-            this.btnPerVeiCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnPerVeiCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPerVeiCancelar.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
-            this.btnPerVeiCancelar.Location = new System.Drawing.Point(1032, 5);
+            this.btnPerVeiCancelar.Location = new System.Drawing.Point(959, 5);
             this.btnPerVeiCancelar.Name = "btnPerVeiCancelar";
-            this.btnPerVeiCancelar.Size = new System.Drawing.Size(51, 44);
-            this.btnPerVeiCancelar.TabIndex = 49;
+            this.btnPerVeiCancelar.Size = new System.Drawing.Size(49, 44);
+            this.btnPerVeiCancelar.TabIndex = 1;
             this.btnPerVeiCancelar.UseVisualStyleBackColor = true;
             this.btnPerVeiCancelar.Click += new System.EventHandler(this.btnPerVeiCancelar_Click);
             // 
             // brnCadastrar
             // 
+            this.brnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.brnCadastrar.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
-            this.brnCadastrar.Location = new System.Drawing.Point(1135, 5);
+            this.brnCadastrar.Location = new System.Drawing.Point(1017, 5);
             this.brnCadastrar.Name = "brnCadastrar";
             this.brnCadastrar.Size = new System.Drawing.Size(51, 44);
-            this.brnCadastrar.TabIndex = 26;
+            this.brnCadastrar.TabIndex = 0;
             this.brnCadastrar.UseVisualStyleBackColor = true;
             this.brnCadastrar.Click += new System.EventHandler(this.brnCadastrar_Click);
             // 
             // label32
             // 
-            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(452, 119);
+            this.label32.Location = new System.Drawing.Point(452, 120);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(128, 17);
             this.label32.TabIndex = 52;
@@ -1903,10 +1906,10 @@
             // 
             // label31
             // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(786, 119);
+            this.label31.Location = new System.Drawing.Point(786, 120);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(49, 17);
             this.label31.TabIndex = 51;
@@ -1914,92 +1917,85 @@
             // 
             // txtPerVeiPlaca
             // 
-            this.txtPerVeiPlaca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPerVeiPlaca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiPlaca.Location = new System.Drawing.Point(789, 140);
             this.txtPerVeiPlaca.Name = "txtPerVeiPlaca";
-            this.txtPerVeiPlaca.Size = new System.Drawing.Size(109, 25);
-            this.txtPerVeiPlaca.TabIndex = 50;
+            this.txtPerVeiPlaca.Size = new System.Drawing.Size(107, 25);
+            this.txtPerVeiPlaca.TabIndex = 5;
             // 
             // txtPerVeiProntuario4
             // 
-            this.txtPerVeiProntuario4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPerVeiProntuario4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiProntuario4.Enabled = false;
-            this.txtPerVeiProntuario4.Location = new System.Drawing.Point(677, 421);
+            this.txtPerVeiProntuario4.Location = new System.Drawing.Point(677, 412);
             this.txtPerVeiProntuario4.Name = "txtPerVeiProntuario4";
-            this.txtPerVeiProntuario4.Size = new System.Drawing.Size(333, 25);
-            this.txtPerVeiProntuario4.TabIndex = 41;
+            this.txtPerVeiProntuario4.Size = new System.Drawing.Size(331, 25);
+            this.txtPerVeiProntuario4.TabIndex = 21;
             this.txtPerVeiProntuario4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiProntuario1_KeyPress);
             // 
             // txtPerVeiSerPre4
             // 
-            this.txtPerVeiSerPre4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPerVeiSerPre4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtPerVeiSerPre4.Enabled = false;
-            this.txtPerVeiSerPre4.Location = new System.Drawing.Point(84, 421);
+            this.txtPerVeiSerPre4.Location = new System.Drawing.Point(84, 412);
             this.txtPerVeiSerPre4.Name = "txtPerVeiSerPre4";
-            this.txtPerVeiSerPre4.Size = new System.Drawing.Size(576, 25);
-            this.txtPerVeiSerPre4.TabIndex = 39;
+            this.txtPerVeiSerPre4.Size = new System.Drawing.Size(574, 25);
+            this.txtPerVeiSerPre4.TabIndex = 20;
             this.txtPerVeiSerPre4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiSerPre1_KeyPress);
             // 
             // txtPerVeiProntuario3
             // 
-            this.txtPerVeiProntuario3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPerVeiProntuario3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiProntuario3.Enabled = false;
-            this.txtPerVeiProntuario3.Location = new System.Drawing.Point(677, 390);
+            this.txtPerVeiProntuario3.Location = new System.Drawing.Point(677, 381);
             this.txtPerVeiProntuario3.Name = "txtPerVeiProntuario3";
-            this.txtPerVeiProntuario3.Size = new System.Drawing.Size(333, 25);
-            this.txtPerVeiProntuario3.TabIndex = 37;
+            this.txtPerVeiProntuario3.Size = new System.Drawing.Size(331, 25);
+            this.txtPerVeiProntuario3.TabIndex = 19;
             this.txtPerVeiProntuario3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiProntuario1_KeyPress);
             // 
             // txtPerVeiSerPre3
             // 
-            this.txtPerVeiSerPre3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPerVeiSerPre3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtPerVeiSerPre3.Enabled = false;
-            this.txtPerVeiSerPre3.Location = new System.Drawing.Point(84, 390);
+            this.txtPerVeiSerPre3.Location = new System.Drawing.Point(84, 381);
             this.txtPerVeiSerPre3.Name = "txtPerVeiSerPre3";
-            this.txtPerVeiSerPre3.Size = new System.Drawing.Size(576, 25);
-            this.txtPerVeiSerPre3.TabIndex = 35;
+            this.txtPerVeiSerPre3.Size = new System.Drawing.Size(574, 25);
+            this.txtPerVeiSerPre3.TabIndex = 18;
             this.txtPerVeiSerPre3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiSerPre1_KeyPress);
             // 
             // txtPerVeiProntuario2
             // 
-            this.txtPerVeiProntuario2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPerVeiProntuario2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiProntuario2.Enabled = false;
-            this.txtPerVeiProntuario2.Location = new System.Drawing.Point(677, 359);
+            this.txtPerVeiProntuario2.Location = new System.Drawing.Point(677, 350);
             this.txtPerVeiProntuario2.Name = "txtPerVeiProntuario2";
-            this.txtPerVeiProntuario2.Size = new System.Drawing.Size(333, 25);
-            this.txtPerVeiProntuario2.TabIndex = 33;
+            this.txtPerVeiProntuario2.Size = new System.Drawing.Size(331, 25);
+            this.txtPerVeiProntuario2.TabIndex = 17;
             this.txtPerVeiProntuario2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiProntuario1_KeyPress);
             // 
             // txtPerVeiSerPre2
             // 
-            this.txtPerVeiSerPre2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPerVeiSerPre2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtPerVeiSerPre2.Enabled = false;
-            this.txtPerVeiSerPre2.Location = new System.Drawing.Point(84, 359);
+            this.txtPerVeiSerPre2.Location = new System.Drawing.Point(84, 350);
             this.txtPerVeiSerPre2.Name = "txtPerVeiSerPre2";
-            this.txtPerVeiSerPre2.Size = new System.Drawing.Size(576, 25);
-            this.txtPerVeiSerPre2.TabIndex = 31;
+            this.txtPerVeiSerPre2.Size = new System.Drawing.Size(574, 25);
+            this.txtPerVeiSerPre2.TabIndex = 16;
             this.txtPerVeiSerPre2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiSerPre1_KeyPress);
             // 
             // lblPerVeiPro1
             // 
-            this.lblPerVeiPro1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPerVeiPro1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPerVeiPro1.AutoSize = true;
             this.lblPerVeiPro1.Enabled = false;
-            this.lblPerVeiPro1.Location = new System.Drawing.Point(674, 307);
+            this.lblPerVeiPro1.Location = new System.Drawing.Point(674, 298);
             this.lblPerVeiPro1.Name = "lblPerVeiPro1";
             this.lblPerVeiPro1.Size = new System.Drawing.Size(79, 17);
             this.lblPerVeiPro1.TabIndex = 30;
@@ -2007,14 +2003,13 @@
             // 
             // txtPerVeiProntuario1
             // 
-            this.txtPerVeiProntuario1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPerVeiProntuario1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiProntuario1.Enabled = false;
-            this.txtPerVeiProntuario1.Location = new System.Drawing.Point(677, 328);
+            this.txtPerVeiProntuario1.Location = new System.Drawing.Point(677, 319);
             this.txtPerVeiProntuario1.Name = "txtPerVeiProntuario1";
-            this.txtPerVeiProntuario1.Size = new System.Drawing.Size(333, 25);
-            this.txtPerVeiProntuario1.TabIndex = 29;
+            this.txtPerVeiProntuario1.Size = new System.Drawing.Size(331, 25);
+            this.txtPerVeiProntuario1.TabIndex = 15;
             this.txtPerVeiProntuario1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiProntuario1_KeyPress);
             // 
             // lblPerVeiSerPre1
@@ -2023,7 +2018,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPerVeiSerPre1.AutoSize = true;
             this.lblPerVeiSerPre1.Enabled = false;
-            this.lblPerVeiSerPre1.Location = new System.Drawing.Point(81, 307);
+            this.lblPerVeiSerPre1.Location = new System.Drawing.Point(81, 298);
             this.lblPerVeiSerPre1.Name = "lblPerVeiSerPre1";
             this.lblPerVeiSerPre1.Size = new System.Drawing.Size(188, 17);
             this.lblPerVeiSerPre1.TabIndex = 28;
@@ -2031,19 +2026,18 @@
             // 
             // txtPerVeiSerPre1
             // 
-            this.txtPerVeiSerPre1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPerVeiSerPre1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtPerVeiSerPre1.Enabled = false;
-            this.txtPerVeiSerPre1.Location = new System.Drawing.Point(84, 328);
+            this.txtPerVeiSerPre1.Location = new System.Drawing.Point(84, 319);
             this.txtPerVeiSerPre1.Name = "txtPerVeiSerPre1";
-            this.txtPerVeiSerPre1.Size = new System.Drawing.Size(576, 25);
-            this.txtPerVeiSerPre1.TabIndex = 27;
+            this.txtPerVeiSerPre1.Size = new System.Drawing.Size(574, 25);
+            this.txtPerVeiSerPre1.TabIndex = 14;
             this.txtPerVeiSerPre1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiSerPre1_KeyPress);
             // 
             // cmbPerVeiDocente
             // 
-            this.cmbPerVeiDocente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbPerVeiDocente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbPerVeiDocente.Enabled = false;
             this.cmbPerVeiDocente.FormattingEnabled = true;
@@ -2052,13 +2046,13 @@
             "Não"});
             this.cmbPerVeiDocente.Location = new System.Drawing.Point(549, 270);
             this.cmbPerVeiDocente.Name = "cmbPerVeiDocente";
-            this.cmbPerVeiDocente.Size = new System.Drawing.Size(219, 25);
-            this.cmbPerVeiDocente.TabIndex = 25;
+            this.cmbPerVeiDocente.Size = new System.Drawing.Size(217, 25);
+            this.cmbPerVeiDocente.TabIndex = 13;
             this.cmbPerVeiDocente.Text = "Selecione";
             // 
             // lblPerVeiDocente
             // 
-            this.lblPerVeiDocente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPerVeiDocente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPerVeiDocente.AutoSize = true;
             this.lblPerVeiDocente.Enabled = false;
@@ -2070,8 +2064,7 @@
             // 
             // cmbPerVeiAnoCarro
             // 
-            this.cmbPerVeiAnoCarro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPerVeiAnoCarro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbPerVeiAnoCarro.FormattingEnabled = true;
             this.cmbPerVeiAnoCarro.Items.AddRange(new object[] {
             "1951",
@@ -2176,16 +2169,15 @@
             "2050"});
             this.cmbPerVeiAnoCarro.Location = new System.Drawing.Point(913, 140);
             this.cmbPerVeiAnoCarro.Name = "cmbPerVeiAnoCarro";
-            this.cmbPerVeiAnoCarro.Size = new System.Drawing.Size(88, 25);
-            this.cmbPerVeiAnoCarro.TabIndex = 23;
+            this.cmbPerVeiAnoCarro.Size = new System.Drawing.Size(86, 25);
+            this.cmbPerVeiAnoCarro.TabIndex = 6;
             this.cmbPerVeiAnoCarro.Text = "Selecione";
             // 
             // label35
             // 
-            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(910, 119);
+            this.label35.Location = new System.Drawing.Point(910, 120);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(33, 17);
             this.label35.TabIndex = 22;
@@ -2202,12 +2194,12 @@
             // 
             // txtPerVeiModelo
             // 
-            this.txtPerVeiModelo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPerVeiModelo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiModelo.Location = new System.Drawing.Point(455, 140);
             this.txtPerVeiModelo.Name = "txtPerVeiModelo";
-            this.txtPerVeiModelo.Size = new System.Drawing.Size(313, 25);
-            this.txtPerVeiModelo.TabIndex = 19;
+            this.txtPerVeiModelo.Size = new System.Drawing.Size(311, 25);
+            this.txtPerVeiModelo.TabIndex = 4;
             this.txtPerVeiModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiProntuario1_KeyPress);
             // 
             // cmbPerVeiSetor
@@ -2240,8 +2232,8 @@
             "QUI Coordenadoria da Área de Química"});
             this.cmbPerVeiSetor.Location = new System.Drawing.Point(81, 270);
             this.cmbPerVeiSetor.Name = "cmbPerVeiSetor";
-            this.cmbPerVeiSetor.Size = new System.Drawing.Size(452, 25);
-            this.cmbPerVeiSetor.TabIndex = 18;
+            this.cmbPerVeiSetor.Size = new System.Drawing.Size(450, 25);
+            this.cmbPerVeiSetor.TabIndex = 12;
             this.cmbPerVeiSetor.Text = "Selecione";
             // 
             // lblPerVeiSetor
@@ -2256,7 +2248,7 @@
             // 
             // cmbPerVeiAnoLetivo
             // 
-            this.cmbPerVeiAnoLetivo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbPerVeiAnoLetivo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbPerVeiAnoLetivo.FormattingEnabled = true;
             this.cmbPerVeiAnoLetivo.Items.AddRange(new object[] {
@@ -2270,13 +2262,13 @@
             "VIII"});
             this.cmbPerVeiAnoLetivo.Location = new System.Drawing.Point(789, 219);
             this.cmbPerVeiAnoLetivo.Name = "cmbPerVeiAnoLetivo";
-            this.cmbPerVeiAnoLetivo.Size = new System.Drawing.Size(221, 25);
-            this.cmbPerVeiAnoLetivo.TabIndex = 16;
+            this.cmbPerVeiAnoLetivo.Size = new System.Drawing.Size(219, 25);
+            this.cmbPerVeiAnoLetivo.TabIndex = 11;
             this.cmbPerVeiAnoLetivo.Text = "Selecione";
             // 
             // lblPerVeiAno
             // 
-            this.lblPerVeiAno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPerVeiAno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPerVeiAno.AutoSize = true;
             this.lblPerVeiAno.Location = new System.Drawing.Point(786, 200);
@@ -2287,7 +2279,7 @@
             // 
             // cmbPerVeiModulo
             // 
-            this.cmbPerVeiModulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbPerVeiModulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbPerVeiModulo.FormattingEnabled = true;
             this.cmbPerVeiModulo.Items.AddRange(new object[] {
@@ -2301,16 +2293,16 @@
             "8º"});
             this.cmbPerVeiModulo.Location = new System.Drawing.Point(549, 219);
             this.cmbPerVeiModulo.Name = "cmbPerVeiModulo";
-            this.cmbPerVeiModulo.Size = new System.Drawing.Size(219, 25);
-            this.cmbPerVeiModulo.TabIndex = 14;
+            this.cmbPerVeiModulo.Size = new System.Drawing.Size(217, 25);
+            this.cmbPerVeiModulo.TabIndex = 10;
             this.cmbPerVeiModulo.Text = "Selecione";
             // 
             // lblPerVeiModulo
             // 
-            this.lblPerVeiModulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPerVeiModulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPerVeiModulo.AutoSize = true;
-            this.lblPerVeiModulo.Location = new System.Drawing.Point(546, 219);
+            this.lblPerVeiModulo.Location = new System.Drawing.Point(546, 200);
             this.lblPerVeiModulo.Name = "lblPerVeiModulo";
             this.lblPerVeiModulo.Size = new System.Drawing.Size(54, 17);
             this.lblPerVeiModulo.TabIndex = 13;
@@ -2334,8 +2326,8 @@
             "Outros"});
             this.cmbPerVeiCurso.Location = new System.Drawing.Point(83, 219);
             this.cmbPerVeiCurso.Name = "cmbPerVeiCurso";
-            this.cmbPerVeiCurso.Size = new System.Drawing.Size(452, 25);
-            this.cmbPerVeiCurso.TabIndex = 12;
+            this.cmbPerVeiCurso.Size = new System.Drawing.Size(450, 25);
+            this.cmbPerVeiCurso.TabIndex = 9;
             this.cmbPerVeiCurso.Text = "Selecione";
             // 
             // lblPerVeiCurso
@@ -2355,7 +2347,7 @@
             this.rdbPerVeiFuncionario.Location = new System.Drawing.Point(203, 171);
             this.rdbPerVeiFuncionario.Name = "rdbPerVeiFuncionario";
             this.rdbPerVeiFuncionario.Size = new System.Drawing.Size(102, 21);
-            this.rdbPerVeiFuncionario.TabIndex = 10;
+            this.rdbPerVeiFuncionario.TabIndex = 8;
             this.rdbPerVeiFuncionario.Text = "Funcionário";
             this.rdbPerVeiFuncionario.UseVisualStyleBackColor = true;
             this.rdbPerVeiFuncionario.CheckedChanged += new System.EventHandler(this.rdbPerVeiFuncionario_CheckedChanged);
@@ -2376,7 +2368,7 @@
             this.rdbPerVeiAluno.Location = new System.Drawing.Point(131, 171);
             this.rdbPerVeiAluno.Name = "rdbPerVeiAluno";
             this.rdbPerVeiAluno.Size = new System.Drawing.Size(62, 21);
-            this.rdbPerVeiAluno.TabIndex = 8;
+            this.rdbPerVeiAluno.TabIndex = 7;
             this.rdbPerVeiAluno.TabStop = true;
             this.rdbPerVeiAluno.Text = "Aluno";
             this.rdbPerVeiAluno.UseVisualStyleBackColor = true;
@@ -2397,14 +2389,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiMarca.Location = new System.Drawing.Point(83, 140);
             this.txtPerVeiMarca.Name = "txtPerVeiMarca";
-            this.txtPerVeiMarca.Size = new System.Drawing.Size(357, 25);
-            this.txtPerVeiMarca.TabIndex = 6;
+            this.txtPerVeiMarca.Size = new System.Drawing.Size(355, 25);
+            this.txtPerVeiMarca.TabIndex = 3;
             this.txtPerVeiMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiProntuario1_KeyPress);
             // 
             // label28
             // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(546, 70);
             this.label28.Name = "label28";
@@ -2414,12 +2405,11 @@
             // 
             // txtPerVeiProntuario
             // 
-            this.txtPerVeiProntuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPerVeiProntuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiProntuario.Location = new System.Drawing.Point(549, 91);
             this.txtPerVeiProntuario.Name = "txtPerVeiProntuario";
-            this.txtPerVeiProntuario.Size = new System.Drawing.Size(452, 25);
-            this.txtPerVeiProntuario.TabIndex = 4;
+            this.txtPerVeiProntuario.Size = new System.Drawing.Size(450, 25);
+            this.txtPerVeiProntuario.TabIndex = 2;
             this.txtPerVeiProntuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiProntuario1_KeyPress);
             // 
             // label12
@@ -2437,8 +2427,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiRG.Location = new System.Drawing.Point(83, 91);
             this.txtPerVeiRG.Name = "txtPerVeiRG";
-            this.txtPerVeiRG.Size = new System.Drawing.Size(452, 25);
-            this.txtPerVeiRG.TabIndex = 2;
+            this.txtPerVeiRG.Size = new System.Drawing.Size(450, 25);
+            this.txtPerVeiRG.TabIndex = 1;
             this.txtPerVeiRG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiProntuario1_KeyPress);
             // 
             // label11
@@ -2456,7 +2446,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerVeiNome.Location = new System.Drawing.Point(83, 40);
             this.txtPerVeiNome.Name = "txtPerVeiNome";
-            this.txtPerVeiNome.Size = new System.Drawing.Size(918, 25);
+            this.txtPerVeiNome.Size = new System.Drawing.Size(916, 25);
             this.txtPerVeiNome.TabIndex = 0;
             this.txtPerVeiNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiSerPre1_KeyPress);
             // 
@@ -2467,21 +2457,44 @@
             this.tabPermanenciaVeiculoEncerrar.Location = new System.Drawing.Point(4, 26);
             this.tabPermanenciaVeiculoEncerrar.Name = "tabPermanenciaVeiculoEncerrar";
             this.tabPermanenciaVeiculoEncerrar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPermanenciaVeiculoEncerrar.Size = new System.Drawing.Size(1089, 515);
+            this.tabPermanenciaVeiculoEncerrar.Size = new System.Drawing.Size(1087, 498);
             this.tabPermanenciaVeiculoEncerrar.TabIndex = 9;
             this.tabPermanenciaVeiculoEncerrar.Text = "Encerrar permanência de veículo";
             this.tabPermanenciaVeiculoEncerrar.UseVisualStyleBackColor = true;
             this.tabPermanenciaVeiculoEncerrar.Click += new System.EventHandler(this.tabPermanenciaVeiculoEncerrar_Click);
             // 
+            // panel14
+            // 
+            this.panel14.AllowDrop = true;
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel14.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel14.Controls.Add(this.btnRegistrarSaida);
+            this.panel14.Controls.Add(this.button7);
+            this.panel14.Location = new System.Drawing.Point(0, 443);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(1091, 55);
+            this.panel14.TabIndex = 54;
+            // 
             // btnRegistrarSaida
             // 
+            this.btnRegistrarSaida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistrarSaida.Image = global::Sistema.Ifsp.View.Properties.Resources._13;
-            this.btnRegistrarSaida.Location = new System.Drawing.Point(1022, 5);
+            this.btnRegistrarSaida.Location = new System.Drawing.Point(1030, 5);
             this.btnRegistrarSaida.Name = "btnRegistrarSaida";
             this.btnRegistrarSaida.Size = new System.Drawing.Size(51, 44);
-            this.btnRegistrarSaida.TabIndex = 3;
+            this.btnRegistrarSaida.TabIndex = 0;
             this.btnRegistrarSaida.UseVisualStyleBackColor = true;
             this.btnRegistrarSaida.Click += new System.EventHandler(this.btnRegistrarSaida_Click);
+            // 
+            // button7
+            // 
+            this.button7.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
+            this.button7.Location = new System.Drawing.Point(1135, 5);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(51, 44);
+            this.button7.TabIndex = 26;
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // dgvPermanenciaVeiculo
             // 
@@ -2502,7 +2515,7 @@
             this.dgvPermanenciaVeiculo.MultiSelect = false;
             this.dgvPermanenciaVeiculo.Name = "dgvPermanenciaVeiculo";
             this.dgvPermanenciaVeiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPermanenciaVeiculo.Size = new System.Drawing.Size(986, 379);
+            this.dgvPermanenciaVeiculo.Size = new System.Drawing.Size(997, 386);
             this.dgvPermanenciaVeiculo.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn13
@@ -2537,14 +2550,13 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.btnCadAltSenCancelar);
+            this.tabPage4.Controls.Add(this.panel15);
             this.tabPage4.Controls.Add(this.txtCadAltID);
             this.tabPage4.Controls.Add(this.label40);
             this.tabPage4.Controls.Add(this.label39);
             this.tabPage4.Controls.Add(this.cmbCadAltNivelAcesso);
             this.tabPage4.Controls.Add(this.label38);
             this.tabPage4.Controls.Add(this.txtCadAltNome);
-            this.tabPage4.Controls.Add(this.btnCadAltSenCadAlt);
             this.tabPage4.Controls.Add(this.btnCadAltSenPesquisar);
             this.tabPage4.Controls.Add(this.label37);
             this.tabPage4.Controls.Add(this.txtCadAltSenUsuario);
@@ -2557,33 +2569,59 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1089, 515);
+            this.tabPage4.Size = new System.Drawing.Size(1087, 498);
             this.tabPage4.TabIndex = 10;
             this.tabPage4.Text = "Cadastrar/Alterar Senha";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // panel15
+            // 
+            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel15.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel15.Controls.Add(this.btnCadAltSenCancelar);
+            this.panel15.Controls.Add(this.btnCadAltSenCadAlt);
+            this.panel15.Location = new System.Drawing.Point(0, 443);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(1091, 55);
+            this.panel15.TabIndex = 55;
+            // 
             // btnCadAltSenCancelar
             // 
-            this.btnCadAltSenCancelar.Location = new System.Drawing.Point(619, 391);
+            this.btnCadAltSenCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadAltSenCancelar.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
+            this.btnCadAltSenCancelar.Location = new System.Drawing.Point(962, 5);
             this.btnCadAltSenCancelar.Name = "btnCadAltSenCancelar";
-            this.btnCadAltSenCancelar.Size = new System.Drawing.Size(155, 36);
-            this.btnCadAltSenCancelar.TabIndex = 16;
-            this.btnCadAltSenCancelar.Text = "Cancelar";
+            this.btnCadAltSenCancelar.Size = new System.Drawing.Size(51, 44);
+            this.btnCadAltSenCancelar.TabIndex = 1;
             this.btnCadAltSenCancelar.UseVisualStyleBackColor = true;
             this.btnCadAltSenCancelar.Click += new System.EventHandler(this.btnCadAltSenCancelar_Click);
             // 
+            // btnCadAltSenCadAlt
+            // 
+            this.btnCadAltSenCadAlt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadAltSenCadAlt.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
+            this.btnCadAltSenCadAlt.Location = new System.Drawing.Point(1019, 5);
+            this.btnCadAltSenCadAlt.Name = "btnCadAltSenCadAlt";
+            this.btnCadAltSenCadAlt.Size = new System.Drawing.Size(51, 44);
+            this.btnCadAltSenCadAlt.TabIndex = 0;
+            this.btnCadAltSenCadAlt.UseVisualStyleBackColor = true;
+            this.btnCadAltSenCadAlt.Click += new System.EventHandler(this.btnCadAltSenCadAlt_Click);
+            // 
             // txtCadAltID
             // 
-            this.txtCadAltID.Location = new System.Drawing.Point(110, 232);
+            this.txtCadAltID.Location = new System.Drawing.Point(112, 224);
             this.txtCadAltID.Name = "txtCadAltID";
             this.txtCadAltID.ReadOnly = true;
             this.txtCadAltID.Size = new System.Drawing.Size(34, 25);
-            this.txtCadAltID.TabIndex = 15;
+            this.txtCadAltID.TabIndex = 2;
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(158, 211);
+            this.label40.Location = new System.Drawing.Point(158, 204);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(51, 17);
             this.label40.TabIndex = 14;
@@ -2591,6 +2629,7 @@
             // 
             // label39
             // 
+            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
             this.label39.Location = new System.Drawing.Point(541, 262);
             this.label39.Name = "label39";
@@ -2600,6 +2639,7 @@
             // 
             // cmbCadAltNivelAcesso
             // 
+            this.cmbCadAltNivelAcesso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbCadAltNivelAcesso.FormattingEnabled = true;
             this.cmbCadAltNivelAcesso.Items.AddRange(new object[] {
             "Administração",
@@ -2609,14 +2649,14 @@
             "Administrador do Sistema"});
             this.cmbCadAltNivelAcesso.Location = new System.Drawing.Point(544, 283);
             this.cmbCadAltNivelAcesso.Name = "cmbCadAltNivelAcesso";
-            this.cmbCadAltNivelAcesso.Size = new System.Drawing.Size(121, 25);
-            this.cmbCadAltNivelAcesso.TabIndex = 12;
+            this.cmbCadAltNivelAcesso.Size = new System.Drawing.Size(119, 25);
+            this.cmbCadAltNivelAcesso.TabIndex = 5;
             this.cmbCadAltNivelAcesso.Text = "Selecione";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(107, 211);
+            this.label38.Location = new System.Drawing.Point(109, 203);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(26, 17);
             this.label38.TabIndex = 11;
@@ -2624,29 +2664,23 @@
             // 
             // txtCadAltNome
             // 
-            this.txtCadAltNome.Location = new System.Drawing.Point(161, 232);
+            this.txtCadAltNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCadAltNome.Location = new System.Drawing.Point(161, 224);
             this.txtCadAltNome.Name = "txtCadAltNome";
             this.txtCadAltNome.ReadOnly = true;
-            this.txtCadAltNome.Size = new System.Drawing.Size(817, 25);
-            this.txtCadAltNome.TabIndex = 10;
-            // 
-            // btnCadAltSenCadAlt
-            // 
-            this.btnCadAltSenCadAlt.Location = new System.Drawing.Point(780, 391);
-            this.btnCadAltSenCadAlt.Name = "btnCadAltSenCadAlt";
-            this.btnCadAltSenCadAlt.Size = new System.Drawing.Size(155, 36);
-            this.btnCadAltSenCadAlt.TabIndex = 9;
-            this.btnCadAltSenCadAlt.Text = "Cadastar/Alterar";
-            this.btnCadAltSenCadAlt.UseVisualStyleBackColor = true;
-            this.btnCadAltSenCadAlt.Click += new System.EventHandler(this.btnCadAltSenCadAlt_Click);
+            this.txtCadAltNome.Size = new System.Drawing.Size(815, 25);
+            this.txtCadAltNome.TabIndex = 3;
             // 
             // btnCadAltSenPesquisar
             // 
-            this.btnCadAltSenPesquisar.Location = new System.Drawing.Point(891, 157);
+            this.btnCadAltSenPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadAltSenPesquisar.Image = global::Sistema.Ifsp.View.Properties.Resources._61;
+            this.btnCadAltSenPesquisar.Location = new System.Drawing.Point(891, 159);
             this.btnCadAltSenPesquisar.Name = "btnCadAltSenPesquisar";
-            this.btnCadAltSenPesquisar.Size = new System.Drawing.Size(87, 36);
-            this.btnCadAltSenPesquisar.TabIndex = 8;
-            this.btnCadAltSenPesquisar.Text = "Pesquisar";
+            this.btnCadAltSenPesquisar.Size = new System.Drawing.Size(38, 31);
+            this.btnCadAltSenPesquisar.TabIndex = 1;
             this.btnCadAltSenPesquisar.UseVisualStyleBackColor = true;
             this.btnCadAltSenPesquisar.Click += new System.EventHandler(this.btnCadAltSenPesquisar_Click);
             // 
@@ -2661,10 +2695,12 @@
             // 
             // txtCadAltSenUsuario
             // 
+            this.txtCadAltSenUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCadAltSenUsuario.Location = new System.Drawing.Point(110, 283);
             this.txtCadAltSenUsuario.Name = "txtCadAltSenUsuario";
-            this.txtCadAltSenUsuario.Size = new System.Drawing.Size(425, 25);
-            this.txtCadAltSenUsuario.TabIndex = 6;
+            this.txtCadAltSenUsuario.Size = new System.Drawing.Size(423, 25);
+            this.txtCadAltSenUsuario.TabIndex = 4;
             // 
             // label36
             // 
@@ -2680,7 +2716,7 @@
             this.txtCadAltSenSenha.Location = new System.Drawing.Point(110, 332);
             this.txtCadAltSenSenha.Name = "txtCadAltSenSenha";
             this.txtCadAltSenSenha.Size = new System.Drawing.Size(425, 25);
-            this.txtCadAltSenSenha.TabIndex = 4;
+            this.txtCadAltSenSenha.TabIndex = 6;
             // 
             // label33
             // 
@@ -2693,18 +2729,22 @@
             // 
             // txtCadAltPesquisa
             // 
+            this.txtCadAltPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCadAltPesquisa.Location = new System.Drawing.Point(110, 163);
             this.txtCadAltPesquisa.Name = "txtCadAltPesquisa";
-            this.txtCadAltPesquisa.Size = new System.Drawing.Size(775, 25);
-            this.txtCadAltPesquisa.TabIndex = 2;
+            this.txtCadAltPesquisa.Size = new System.Drawing.Size(773, 25);
+            this.txtCadAltPesquisa.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.rdbCadAltTerceirizado);
             this.groupBox1.Controls.Add(this.rdbCadAltFunVinIFSP);
             this.groupBox1.Location = new System.Drawing.Point(110, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(868, 55);
+            this.groupBox1.Size = new System.Drawing.Size(866, 55);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro:";
@@ -2735,12 +2775,14 @@
             // 
             // grbCadAltSenTipo
             // 
+            this.grbCadAltSenTipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbCadAltSenTipo.Controls.Add(this.rdbCadAltId);
             this.grbCadAltSenTipo.Controls.Add(this.rdbCadAltProntuario);
             this.grbCadAltSenTipo.Controls.Add(this.rdbCadAltNome);
             this.grbCadAltSenTipo.Location = new System.Drawing.Point(110, 82);
             this.grbCadAltSenTipo.Name = "grbCadAltSenTipo";
-            this.grbCadAltSenTipo.Size = new System.Drawing.Size(868, 57);
+            this.grbCadAltSenTipo.Size = new System.Drawing.Size(866, 57);
             this.grbCadAltSenTipo.TabIndex = 0;
             this.grbCadAltSenTipo.TabStop = false;
             this.grbCadAltSenTipo.Text = "Tipo de Pesquisa:";
@@ -2779,13 +2821,9 @@
             // 
             // tabManterTerceirizado
             // 
-            this.tabManterTerceirizado.Controls.Add(this.txtCadTerArea);
+            this.tabManterTerceirizado.Controls.Add(this.panel16);
             this.tabManterTerceirizado.Controls.Add(this.btnCadTerSelecionarRegistro);
-            this.tabManterTerceirizado.Controls.Add(this.btnCadTerExcluir);
-            this.tabManterTerceirizado.Controls.Add(this.btnCadTerCancelar);
-            this.tabManterTerceirizado.Controls.Add(this.btnCadTerSalvar);
-            this.tabManterTerceirizado.Controls.Add(this.btnCadTerAlterar);
-            this.tabManterTerceirizado.Controls.Add(this.btnCadTerCadastrar);
+            this.tabManterTerceirizado.Controls.Add(this.txtCadTerArea);
             this.tabManterTerceirizado.Controls.Add(this.dgvCadTerResultadoPesquisa);
             this.tabManterTerceirizado.Controls.Add(this.btnCadTerPesquisar);
             this.tabManterTerceirizado.Controls.Add(this.txtCadTerPesquisa);
@@ -2811,10 +2849,100 @@
             this.tabManterTerceirizado.Location = new System.Drawing.Point(4, 26);
             this.tabManterTerceirizado.Name = "tabManterTerceirizado";
             this.tabManterTerceirizado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabManterTerceirizado.Size = new System.Drawing.Size(1089, 515);
+            this.tabManterTerceirizado.Size = new System.Drawing.Size(1087, 498);
             this.tabManterTerceirizado.TabIndex = 11;
             this.tabManterTerceirizado.Text = "Manter Terceirizado";
             this.tabManterTerceirizado.UseVisualStyleBackColor = true;
+            // 
+            // panel16
+            // 
+            this.panel16.AllowDrop = true;
+            this.panel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel16.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel16.Controls.Add(this.btnCadTerExcluir);
+            this.panel16.Controls.Add(this.btnCadTerCadastrar);
+            this.panel16.Controls.Add(this.btnCadTerCancelar);
+            this.panel16.Controls.Add(this.btnCadTerAlterar);
+            this.panel16.Controls.Add(this.btnCadTerSalvar);
+            this.panel16.Location = new System.Drawing.Point(0, 443);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(1091, 55);
+            this.panel16.TabIndex = 55;
+            // 
+            // btnCadTerExcluir
+            // 
+            this.btnCadTerExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadTerExcluir.Image = global::Sistema.Ifsp.View.Properties.Resources._1;
+            this.btnCadTerExcluir.Location = new System.Drawing.Point(973, 5);
+            this.btnCadTerExcluir.Name = "btnCadTerExcluir";
+            this.btnCadTerExcluir.Size = new System.Drawing.Size(51, 44);
+            this.btnCadTerExcluir.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnCadTerExcluir, "Excluir");
+            this.btnCadTerExcluir.UseVisualStyleBackColor = true;
+            this.btnCadTerExcluir.Click += new System.EventHandler(this.btnCadTerExcluir_Click);
+            // 
+            // btnCadTerCadastrar
+            // 
+            this.btnCadTerCadastrar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCadTerCadastrar.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
+            this.btnCadTerCadastrar.Location = new System.Drawing.Point(1030, 5);
+            this.btnCadTerCadastrar.Name = "btnCadTerCadastrar";
+            this.btnCadTerCadastrar.Size = new System.Drawing.Size(51, 44);
+            this.btnCadTerCadastrar.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnCadTerCadastrar, "Cadastrar");
+            this.btnCadTerCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadTerCadastrar.Click += new System.EventHandler(this.btnCadTerCadastrar_Click);
+            // 
+            // btnCadTerCancelar
+            // 
+            this.btnCadTerCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCadTerCancelar.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
+            this.btnCadTerCancelar.Location = new System.Drawing.Point(859, 5);
+            this.btnCadTerCancelar.Name = "btnCadTerCancelar";
+            this.btnCadTerCancelar.Size = new System.Drawing.Size(51, 44);
+            this.btnCadTerCancelar.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnCadTerCancelar, "Cancelar");
+            this.btnCadTerCancelar.UseVisualStyleBackColor = true;
+            this.btnCadTerCancelar.Click += new System.EventHandler(this.btnCadTerCancelar_Click);
+            // 
+            // btnCadTerAlterar
+            // 
+            this.btnCadTerAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadTerAlterar.Image = global::Sistema.Ifsp.View.Properties.Resources._121;
+            this.btnCadTerAlterar.Location = new System.Drawing.Point(916, 5);
+            this.btnCadTerAlterar.Name = "btnCadTerAlterar";
+            this.btnCadTerAlterar.Size = new System.Drawing.Size(51, 44);
+            this.btnCadTerAlterar.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnCadTerAlterar, "Alterar");
+            this.btnCadTerAlterar.UseVisualStyleBackColor = true;
+            this.btnCadTerAlterar.Click += new System.EventHandler(this.btnCadTerAlterar_Click);
+            // 
+            // btnCadTerSalvar
+            // 
+            this.btnCadTerSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadTerSalvar.Image = global::Sistema.Ifsp.View.Properties.Resources._13;
+            this.btnCadTerSalvar.Location = new System.Drawing.Point(802, 5);
+            this.btnCadTerSalvar.Name = "btnCadTerSalvar";
+            this.btnCadTerSalvar.Size = new System.Drawing.Size(51, 44);
+            this.btnCadTerSalvar.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnCadTerSalvar, "Salvar");
+            this.btnCadTerSalvar.UseVisualStyleBackColor = true;
+            this.btnCadTerSalvar.Click += new System.EventHandler(this.btnCadTerSalvar_Click);
+            // 
+            // btnCadTerSelecionarRegistro
+            // 
+            this.btnCadTerSelecionarRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadTerSelecionarRegistro.Location = new System.Drawing.Point(768, 403);
+            this.btnCadTerSelecionarRegistro.Name = "btnCadTerSelecionarRegistro";
+            this.btnCadTerSelecionarRegistro.Size = new System.Drawing.Size(174, 34);
+            this.btnCadTerSelecionarRegistro.TabIndex = 11;
+            this.btnCadTerSelecionarRegistro.Text = "Selecionar Registro";
+            this.btnCadTerSelecionarRegistro.UseVisualStyleBackColor = true;
+            this.btnCadTerSelecionarRegistro.Click += new System.EventHandler(this.btnCadTerSelecionarRegistro_Click);
             // 
             // txtCadTerArea
             // 
@@ -2823,81 +2951,24 @@
             this.txtCadTerArea.Size = new System.Drawing.Size(257, 25);
             this.txtCadTerArea.TabIndex = 6;
             // 
-            // btnCadTerSelecionarRegistro
-            // 
-            this.btnCadTerSelecionarRegistro.Location = new System.Drawing.Point(764, 492);
-            this.btnCadTerSelecionarRegistro.Name = "btnCadTerSelecionarRegistro";
-            this.btnCadTerSelecionarRegistro.Size = new System.Drawing.Size(180, 27);
-            this.btnCadTerSelecionarRegistro.TabIndex = 11;
-            this.btnCadTerSelecionarRegistro.Text = "Selecionar Registro";
-            this.btnCadTerSelecionarRegistro.UseVisualStyleBackColor = true;
-            this.btnCadTerSelecionarRegistro.Click += new System.EventHandler(this.btnCadTerSelecionarRegistro_Click);
-            // 
-            // btnCadTerExcluir
-            // 
-            this.btnCadTerExcluir.Location = new System.Drawing.Point(707, 541);
-            this.btnCadTerExcluir.Name = "btnCadTerExcluir";
-            this.btnCadTerExcluir.Size = new System.Drawing.Size(75, 27);
-            this.btnCadTerExcluir.TabIndex = 27;
-            this.btnCadTerExcluir.Text = "Excluir";
-            this.btnCadTerExcluir.UseVisualStyleBackColor = true;
-            this.btnCadTerExcluir.Click += new System.EventHandler(this.btnCadTerExcluir_Click);
-            // 
-            // btnCadTerCancelar
-            // 
-            this.btnCadTerCancelar.Location = new System.Drawing.Point(788, 541);
-            this.btnCadTerCancelar.Name = "btnCadTerCancelar";
-            this.btnCadTerCancelar.Size = new System.Drawing.Size(75, 27);
-            this.btnCadTerCancelar.TabIndex = 13;
-            this.btnCadTerCancelar.Text = "Cancelar";
-            this.btnCadTerCancelar.UseVisualStyleBackColor = true;
-            this.btnCadTerCancelar.Click += new System.EventHandler(this.btnCadTerCancelar_Click);
-            // 
-            // btnCadTerSalvar
-            // 
-            this.btnCadTerSalvar.Location = new System.Drawing.Point(869, 541);
-            this.btnCadTerSalvar.Name = "btnCadTerSalvar";
-            this.btnCadTerSalvar.Size = new System.Drawing.Size(75, 27);
-            this.btnCadTerSalvar.TabIndex = 12;
-            this.btnCadTerSalvar.Text = "Salvar";
-            this.btnCadTerSalvar.UseVisualStyleBackColor = true;
-            this.btnCadTerSalvar.Click += new System.EventHandler(this.btnCadTerSalvar_Click);
-            // 
-            // btnCadTerAlterar
-            // 
-            this.btnCadTerAlterar.Location = new System.Drawing.Point(626, 541);
-            this.btnCadTerAlterar.Name = "btnCadTerAlterar";
-            this.btnCadTerAlterar.Size = new System.Drawing.Size(75, 27);
-            this.btnCadTerAlterar.TabIndex = 24;
-            this.btnCadTerAlterar.Text = "Alterar";
-            this.btnCadTerAlterar.UseVisualStyleBackColor = true;
-            this.btnCadTerAlterar.Click += new System.EventHandler(this.btnCadTerAlterar_Click);
-            // 
-            // btnCadTerCadastrar
-            // 
-            this.btnCadTerCadastrar.Location = new System.Drawing.Point(530, 541);
-            this.btnCadTerCadastrar.Name = "btnCadTerCadastrar";
-            this.btnCadTerCadastrar.Size = new System.Drawing.Size(90, 27);
-            this.btnCadTerCadastrar.TabIndex = 23;
-            this.btnCadTerCadastrar.Text = "Cadastrar";
-            this.btnCadTerCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadTerCadastrar.Click += new System.EventHandler(this.btnCadTerCadastrar_Click);
-            // 
             // dgvCadTerResultadoPesquisa
             // 
             this.dgvCadTerResultadoPesquisa.AllowUserToAddRows = false;
+            this.dgvCadTerResultadoPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCadTerResultadoPesquisa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCadTerResultadoPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCadTerResultadoPesquisa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column12,
             this.Column13,
             this.Column14});
-            this.dgvCadTerResultadoPesquisa.Location = new System.Drawing.Point(118, 293);
+            this.dgvCadTerResultadoPesquisa.Location = new System.Drawing.Point(118, 270);
             this.dgvCadTerResultadoPesquisa.MultiSelect = false;
             this.dgvCadTerResultadoPesquisa.Name = "dgvCadTerResultadoPesquisa";
             this.dgvCadTerResultadoPesquisa.ReadOnly = true;
             this.dgvCadTerResultadoPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCadTerResultadoPesquisa.Size = new System.Drawing.Size(826, 193);
+            this.dgvCadTerResultadoPesquisa.Size = new System.Drawing.Size(824, 131);
             this.dgvCadTerResultadoPesquisa.TabIndex = 10;
             // 
             // Column12
@@ -2920,17 +2991,21 @@
             // 
             // btnCadTerPesquisar
             // 
-            this.btnCadTerPesquisar.Location = new System.Drawing.Point(858, 252);
+            this.btnCadTerPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadTerPesquisar.Image = global::Sistema.Ifsp.View.Properties.Resources._61;
+            this.btnCadTerPesquisar.Location = new System.Drawing.Point(858, 238);
             this.btnCadTerPesquisar.Name = "btnCadTerPesquisar";
-            this.btnCadTerPesquisar.Size = new System.Drawing.Size(86, 35);
+            this.btnCadTerPesquisar.Size = new System.Drawing.Size(37, 25);
             this.btnCadTerPesquisar.TabIndex = 9;
-            this.btnCadTerPesquisar.Text = "Pesquisar";
             this.btnCadTerPesquisar.UseVisualStyleBackColor = true;
             this.btnCadTerPesquisar.Click += new System.EventHandler(this.btnCadTerPesquisar_Click);
             // 
             // txtCadTerPesquisa
             // 
-            this.txtCadTerPesquisa.Location = new System.Drawing.Point(118, 257);
+            this.txtCadTerPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCadTerPesquisa.Location = new System.Drawing.Point(118, 239);
             this.txtCadTerPesquisa.Name = "txtCadTerPesquisa";
             this.txtCadTerPesquisa.Size = new System.Drawing.Size(734, 25);
             this.txtCadTerPesquisa.TabIndex = 8;
@@ -2938,7 +3013,7 @@
             // lblCadTerPesquisa
             // 
             this.lblCadTerPesquisa.AutoSize = true;
-            this.lblCadTerPesquisa.Location = new System.Drawing.Point(115, 236);
+            this.lblCadTerPesquisa.Location = new System.Drawing.Point(115, 218);
             this.lblCadTerPesquisa.Name = "lblCadTerPesquisa";
             this.lblCadTerPesquisa.Size = new System.Drawing.Size(78, 17);
             this.lblCadTerPesquisa.TabIndex = 19;
@@ -2946,11 +3021,13 @@
             // 
             // grpCadTerTipoPesquisa
             // 
+            this.grpCadTerTipoPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpCadTerTipoPesquisa.Controls.Add(this.rdbCadTerNome);
             this.grpCadTerTipoPesquisa.Controls.Add(this.rdbCadTerCodigo);
-            this.grpCadTerTipoPesquisa.Location = new System.Drawing.Point(118, 173);
+            this.grpCadTerTipoPesquisa.Location = new System.Drawing.Point(118, 163);
             this.grpCadTerTipoPesquisa.Name = "grpCadTerTipoPesquisa";
-            this.grpCadTerTipoPesquisa.Size = new System.Drawing.Size(826, 60);
+            this.grpCadTerTipoPesquisa.Size = new System.Drawing.Size(826, 47);
             this.grpCadTerTipoPesquisa.TabIndex = 18;
             this.grpCadTerTipoPesquisa.TabStop = false;
             this.grpCadTerTipoPesquisa.Text = "Tipo de Pesquisa:";
@@ -2979,6 +3056,8 @@
             // 
             // txtCadTerEmpresa
             // 
+            this.txtCadTerEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCadTerEmpresa.Location = new System.Drawing.Point(381, 132);
             this.txtCadTerEmpresa.Name = "txtCadTerEmpresa";
             this.txtCadTerEmpresa.Size = new System.Drawing.Size(563, 25);
@@ -3034,6 +3113,8 @@
             // 
             // dtpCadTerDataNascimento
             // 
+            this.dtpCadTerDataNascimento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpCadTerDataNascimento.CustomFormat = "";
             this.dtpCadTerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpCadTerDataNascimento.Location = new System.Drawing.Point(818, 81);
@@ -3092,6 +3173,8 @@
             // 
             // txtCadTerNome
             // 
+            this.txtCadTerNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCadTerNome.Location = new System.Drawing.Point(183, 34);
             this.txtCadTerNome.Name = "txtCadTerNome";
             this.txtCadTerNome.Size = new System.Drawing.Size(761, 25);
@@ -3138,15 +3221,17 @@
             this.tabRelatoriosAlunos.Location = new System.Drawing.Point(4, 26);
             this.tabRelatoriosAlunos.Name = "tabRelatoriosAlunos";
             this.tabRelatoriosAlunos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRelatoriosAlunos.Size = new System.Drawing.Size(1089, 515);
+            this.tabRelatoriosAlunos.Size = new System.Drawing.Size(1087, 498);
             this.tabRelatoriosAlunos.TabIndex = 12;
             this.tabRelatoriosAlunos.Text = "Gerar relatorios de solicitações  de aluno";
             this.tabRelatoriosAlunos.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(97, 25);
+            this.label9.Location = new System.Drawing.Point(96, 33);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 17);
             this.label9.TabIndex = 0;
@@ -3256,20 +3341,21 @@
             "2112",
             "2113",
             "2114"});
-            this.comboBox1.Location = new System.Drawing.Point(100, 46);
+            this.comboBox1.Location = new System.Drawing.Point(99, 54);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(88, 25);
-            this.comboBox1.TabIndex = 1;
+            this.comboBox1.Size = new System.Drawing.Size(86, 25);
+            this.comboBox1.TabIndex = 0;
             this.comboBox1.Text = "Selecione";
             // 
             // grpGerRelEntradaSaidaTerceirizados
             // 
+            this.grpGerRelEntradaSaidaTerceirizados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpGerRelEntradaSaidaTerceirizados.Controls.Add(this.label52);
             this.grpGerRelEntradaSaidaTerceirizados.Controls.Add(this.textBox1);
             this.grpGerRelEntradaSaidaTerceirizados.Controls.Add(this.button5);
-            this.grpGerRelEntradaSaidaTerceirizados.Location = new System.Drawing.Point(555, 282);
+            this.grpGerRelEntradaSaidaTerceirizados.Location = new System.Drawing.Point(554, 290);
             this.grpGerRelEntradaSaidaTerceirizados.Name = "grpGerRelEntradaSaidaTerceirizados";
-            this.grpGerRelEntradaSaidaTerceirizados.Size = new System.Drawing.Size(449, 86);
+            this.grpGerRelEntradaSaidaTerceirizados.Size = new System.Drawing.Size(447, 86);
             this.grpGerRelEntradaSaidaTerceirizados.TabIndex = 15;
             this.grpGerRelEntradaSaidaTerceirizados.TabStop = false;
             this.grpGerRelEntradaSaidaTerceirizados.Text = "Relatório de Entrada e Saida de Funcionários Tercerizados";
@@ -3288,23 +3374,23 @@
             this.textBox1.Location = new System.Drawing.Point(9, 53);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(269, 25);
-            this.textBox1.TabIndex = 5;
+            this.textBox1.TabIndex = 0;
             // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(284, 52);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(159, 26);
-            this.button5.TabIndex = 4;
+            this.button5.TabIndex = 1;
             this.button5.Text = "Gerar Relatório";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // grpGerRelPermanenciaVeiculo
             // 
             this.grpGerRelPermanenciaVeiculo.Controls.Add(this.button4);
-            this.grpGerRelPermanenciaVeiculo.Location = new System.Drawing.Point(100, 282);
+            this.grpGerRelPermanenciaVeiculo.Location = new System.Drawing.Point(99, 290);
             this.grpGerRelPermanenciaVeiculo.Name = "grpGerRelPermanenciaVeiculo";
-            this.grpGerRelPermanenciaVeiculo.Size = new System.Drawing.Size(449, 86);
+            this.grpGerRelPermanenciaVeiculo.Size = new System.Drawing.Size(447, 86);
             this.grpGerRelPermanenciaVeiculo.TabIndex = 14;
             this.grpGerRelPermanenciaVeiculo.TabStop = false;
             this.grpGerRelPermanenciaVeiculo.Text = "Relatório de Permanencia de Veículos";
@@ -3314,14 +3400,16 @@
             this.button4.Location = new System.Drawing.Point(284, 54);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(159, 26);
-            this.button4.TabIndex = 4;
+            this.button4.TabIndex = 0;
             this.button4.Text = "Gerar Relatório";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // label41
             // 
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(208, 25);
+            this.label41.Location = new System.Drawing.Point(207, 33);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(39, 17);
             this.label41.TabIndex = 2;
@@ -3343,18 +3431,19 @@
             "10",
             "11",
             "12"});
-            this.comboBox2.Location = new System.Drawing.Point(211, 46);
+            this.comboBox2.Location = new System.Drawing.Point(210, 54);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(87, 25);
-            this.comboBox2.TabIndex = 3;
+            this.comboBox2.Size = new System.Drawing.Size(98, 25);
+            this.comboBox2.TabIndex = 1;
             this.comboBox2.Text = "Selecione";
             // 
             // grpGerRelFornecedores
             // 
+            this.grpGerRelFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpGerRelFornecedores.Controls.Add(this.button3);
-            this.grpGerRelFornecedores.Location = new System.Drawing.Point(555, 190);
+            this.grpGerRelFornecedores.Location = new System.Drawing.Point(554, 198);
             this.grpGerRelFornecedores.Name = "grpGerRelFornecedores";
-            this.grpGerRelFornecedores.Size = new System.Drawing.Size(449, 86);
+            this.grpGerRelFornecedores.Size = new System.Drawing.Size(447, 86);
             this.grpGerRelFornecedores.TabIndex = 13;
             this.grpGerRelFornecedores.TabStop = false;
             this.grpGerRelFornecedores.Text = "Relatório de Fornecedores";
@@ -3364,16 +3453,16 @@
             this.button3.Location = new System.Drawing.Point(284, 54);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(159, 26);
-            this.button3.TabIndex = 4;
+            this.button3.TabIndex = 0;
             this.button3.Text = "Gerar Relatório";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // grpGerRelVisitantes
             // 
             this.grpGerRelVisitantes.Controls.Add(this.button2);
-            this.grpGerRelVisitantes.Location = new System.Drawing.Point(100, 190);
+            this.grpGerRelVisitantes.Location = new System.Drawing.Point(99, 198);
             this.grpGerRelVisitantes.Name = "grpGerRelVisitantes";
-            this.grpGerRelVisitantes.Size = new System.Drawing.Size(449, 86);
+            this.grpGerRelVisitantes.Size = new System.Drawing.Size(447, 86);
             this.grpGerRelVisitantes.TabIndex = 12;
             this.grpGerRelVisitantes.TabStop = false;
             this.grpGerRelVisitantes.Text = "Relatório de Visitantes";
@@ -3383,16 +3472,17 @@
             this.button2.Location = new System.Drawing.Point(284, 54);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 26);
-            this.button2.TabIndex = 4;
+            this.button2.TabIndex = 0;
             this.button2.Text = "Gerar Relatório";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // grpGerRelSolicitacaoEntrada
             // 
+            this.grpGerRelSolicitacaoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpGerRelSolicitacaoEntrada.Controls.Add(this.button1);
-            this.grpGerRelSolicitacaoEntrada.Location = new System.Drawing.Point(555, 98);
+            this.grpGerRelSolicitacaoEntrada.Location = new System.Drawing.Point(554, 106);
             this.grpGerRelSolicitacaoEntrada.Name = "grpGerRelSolicitacaoEntrada";
-            this.grpGerRelSolicitacaoEntrada.Size = new System.Drawing.Size(449, 86);
+            this.grpGerRelSolicitacaoEntrada.Size = new System.Drawing.Size(447, 86);
             this.grpGerRelSolicitacaoEntrada.TabIndex = 11;
             this.grpGerRelSolicitacaoEntrada.TabStop = false;
             this.grpGerRelSolicitacaoEntrada.Text = "Relatório da Solicitações de Entrada";
@@ -3402,16 +3492,16 @@
             this.button1.Location = new System.Drawing.Point(284, 54);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 26);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Gerar Relatório";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // grpGerRelSolicitacaoSaida
             // 
             this.grpGerRelSolicitacaoSaida.Controls.Add(this.btnRelSolGerar);
-            this.grpGerRelSolicitacaoSaida.Location = new System.Drawing.Point(100, 98);
+            this.grpGerRelSolicitacaoSaida.Location = new System.Drawing.Point(99, 106);
             this.grpGerRelSolicitacaoSaida.Name = "grpGerRelSolicitacaoSaida";
-            this.grpGerRelSolicitacaoSaida.Size = new System.Drawing.Size(449, 86);
+            this.grpGerRelSolicitacaoSaida.Size = new System.Drawing.Size(447, 86);
             this.grpGerRelSolicitacaoSaida.TabIndex = 10;
             this.grpGerRelSolicitacaoSaida.TabStop = false;
             this.grpGerRelSolicitacaoSaida.Text = "Relatório da Solicitações de Saída";
@@ -3421,7 +3511,7 @@
             this.btnRelSolGerar.Location = new System.Drawing.Point(284, 52);
             this.btnRelSolGerar.Name = "btnRelSolGerar";
             this.btnRelSolGerar.Size = new System.Drawing.Size(159, 26);
-            this.btnRelSolGerar.TabIndex = 4;
+            this.btnRelSolGerar.TabIndex = 0;
             this.btnRelSolGerar.Text = "Gerar Relatório";
             this.btnRelSolGerar.UseVisualStyleBackColor = true;
             this.btnRelSolGerar.Click += new System.EventHandler(this.btnRelSolGerar_Click);
@@ -3463,27 +3553,6 @@
             // relatorioSolicitacaoSaida
             // 
             this.relatorioSolicitacaoSaida.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.relatorioSolicitacaoSaida_PrintPage);
-            // 
-            // panel14
-            // 
-            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel14.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel14.Controls.Add(this.btnRegistrarSaida);
-            this.panel14.Controls.Add(this.button7);
-            this.panel14.Location = new System.Drawing.Point(0, 460);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1093, 55);
-            this.panel14.TabIndex = 54;
-            // 
-            // button7
-            // 
-            this.button7.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
-            this.button7.Location = new System.Drawing.Point(1135, 5);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(51, 44);
-            this.button7.TabIndex = 26;
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 
@@ -3543,15 +3612,18 @@
             this.tabPermanenciaVeiculo.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.tabPermanenciaVeiculoEncerrar.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermanenciaVeiculo)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.panel15.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.grbCadAltSenTipo.ResumeLayout(false);
             this.grbCadAltSenTipo.PerformLayout();
             this.tabManterTerceirizado.ResumeLayout(false);
             this.tabManterTerceirizado.PerformLayout();
+            this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadTerResultadoPesquisa)).EndInit();
             this.grpCadTerTipoPesquisa.ResumeLayout(false);
             this.grpCadTerTipoPesquisa.PerformLayout();
@@ -3564,7 +3636,6 @@
             this.grpGerRelVisitantes.ResumeLayout(false);
             this.grpGerRelSolicitacaoEntrada.ResumeLayout(false);
             this.grpGerRelSolicitacaoSaida.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3717,7 +3788,6 @@
         private System.Windows.Forms.ComboBox cmbPerVeiAnoLetivo;
         private System.Windows.Forms.Label lblPerVeiAno;
         private System.Windows.Forms.ComboBox cmbPerVeiModulo;
-        private System.Windows.Forms.Label lblPerVeiModulo;
         private System.Windows.Forms.ComboBox cmbPerVeiAnoCarro;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
@@ -3792,16 +3862,11 @@
         private System.Windows.Forms.Button btnCadTerPesquisar;
         private System.Windows.Forms.TextBox txtCadTerPesquisa;
         private System.Windows.Forms.Label lblCadTerPesquisa;
-        private System.Windows.Forms.Button btnCadTerExcluir;
-        private System.Windows.Forms.Button btnCadTerCancelar;
-        private System.Windows.Forms.Button btnCadTerSalvar;
-        private System.Windows.Forms.Button btnCadTerCadastrar;
         private System.Windows.Forms.DataGridView dgvCadTerResultadoPesquisa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.Button btnCadTerSelecionarRegistro;
-        private System.Windows.Forms.Button btnCadTerAlterar;
         private System.Windows.Forms.TextBox txtCadTerArea;
         private System.Windows.Forms.TabPage tabRelatoriosAlunos;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -3831,5 +3896,13 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button btnCadTerExcluir;
+        private System.Windows.Forms.Button btnCadTerCadastrar;
+        private System.Windows.Forms.Button btnCadTerCancelar;
+        private System.Windows.Forms.Button btnCadTerAlterar;
+        private System.Windows.Forms.Button btnCadTerSalvar;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Label lblPerVeiModulo;
     }
 }
