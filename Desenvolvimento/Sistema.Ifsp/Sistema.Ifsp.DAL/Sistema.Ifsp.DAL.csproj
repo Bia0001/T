@@ -60,13 +60,9 @@
   <ItemGroup>
     <Compile Include="AcessoContexto.cs" />
     <Compile Include="Contexto.cs" />
-    <Compile Include="Migrations\201511102328412_criando-database.cs" />
-    <Compile Include="Migrations\201511102328412_criando-database.Designer.cs">
-      <DependentUpon>201511102328412_criando-database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511122328075_alterando-pessoafisica.cs" />
-    <Compile Include="Migrations\201511122328075_alterando-pessoafisica.Designer.cs">
-      <DependentUpon>201511122328075_alterando-pessoafisica.cs</DependentUpon>
+    <Compile Include="Migrations\201511161737073_criacao.cs" />
+    <Compile Include="Migrations\201511161737073_criacao.Designer.cs">
+      <DependentUpon>201511161737073_criacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlConfiguration.cs" />
@@ -84,11 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511102328412_criando-database.resx">
-      <DependentUpon>201511102328412_criando-database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511122328075_alterando-pessoafisica.resx">
-      <DependentUpon>201511122328075_alterando-pessoafisica.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511161737073_criacao.resx">
+      <DependentUpon>201511161737073_criacao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

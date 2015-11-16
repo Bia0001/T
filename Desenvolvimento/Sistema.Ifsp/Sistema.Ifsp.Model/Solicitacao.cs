@@ -17,6 +17,6 @@ namespace Sistema.Ifsp.Model
         [Required]
         public virtual Aluno aluno { get; set; }
         [Required]
-        public virtual AssistenteAluno assistenteAluno { get; set; }
+        public virtual Funcionario assistenteAluno { get; set; }
     }
 }

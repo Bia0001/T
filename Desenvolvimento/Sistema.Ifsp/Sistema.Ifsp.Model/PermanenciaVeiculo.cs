@@ -34,6 +34,6 @@ namespace Sistema.Ifsp.Model
         public DateTime dataEntrada { get; set; }
         public DateTime? dataSaida { get; set; }
 
-        public virtual AssistenteAdministracao assistenteAdministracao { get; set; }
+        public virtual Funcionario funcionario { get; set; }
     }
 }

@@ -3,7 +3,7 @@ namespace Sistema.Ifsp.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class criandodatabase : DbMigration
+    public partial class criacao : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,7 @@ namespace Sistema.Ifsp.DAL.Migrations
                         nome = c.String(nullable: false, unicode: false),
                         celular = c.String(unicode: false),
                         telefone = c.String(unicode: false),
+                        sexo = c.String(nullable: false, unicode: false),
                         nascimento = c.DateTime(nullable: false, precision: 0),
                         rg = c.String(nullable: false, unicode: false),
                     })
@@ -71,11 +72,14 @@ namespace Sistema.Ifsp.DAL.Migrations
                         prontuario4 = c.String(unicode: false),
                         dataEntrada = c.DateTime(nullable: false, precision: 0),
                         dataSaida = c.DateTime(precision: 0),
-                        assistenteAdministracao_idPessoaFisica = c.Int(),
+                        funcionario_idPessoaFisica = c.Int(),
+                        AssistenteAdministracao_idPessoaFisica = c.Int(),
                     })
                 .PrimaryKey(t => t.idPermanenciaVeiculo)
-                .ForeignKey("dbo.AssistenteAdministracao", t => t.assistenteAdministracao_idPessoaFisica)
-                .Index(t => t.assistenteAdministracao_idPessoaFisica);
+                .ForeignKey("dbo.Funcionario", t => t.funcionario_idPessoaFisica)
+                .ForeignKey("dbo.AssistenteAdministracao", t => t.AssistenteAdministracao_idPessoaFisica)
+                .Index(t => t.funcionario_idPessoaFisica)
+                .Index(t => t.AssistenteAdministracao_idPessoaFisica);
             
             CreateTable(
                 "dbo.Fornecedor",
@@ -103,7 +107,7 @@ namespace Sistema.Ifsp.DAL.Migrations
                     })
                 .PrimaryKey(t => t.idSolicitacao)
                 .ForeignKey("dbo.Aluno", t => t.aluno_idPessoaFisica)
-                .ForeignKey("dbo.AssistenteAluno", t => t.assistenteAluno_idPessoaFisica)
+                .ForeignKey("dbo.Funcionario", t => t.assistenteAluno_idPessoaFisica)
                 .Index(t => t.aluno_idPessoaFisica)
                 .Index(t => t.assistenteAluno_idPessoaFisica);
             
@@ -288,7 +292,7 @@ namespace Sistema.Ifsp.DAL.Migrations
                     })
                 .PrimaryKey(t => t.idSolicitacao)
                 .ForeignKey("dbo.Solicitacao", t => t.idSolicitacao)
-                .ForeignKey("dbo.Porteiro", t => t.porteiro_idPessoaFisica)
+                .ForeignKey("dbo.PessoaFisica", t => t.porteiro_idPessoaFisica)
                 .Index(t => t.idSolicitacao)
                 .Index(t => t.porteiro_idPessoaFisica);
             
@@ -296,7 +300,7 @@ namespace Sistema.Ifsp.DAL.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.SolicitacaoSaida", "porteiro_idPessoaFisica", "dbo.Porteiro");
+            DropForeignKey("dbo.SolicitacaoSaida", "porteiro_idPessoaFisica", "dbo.PessoaFisica");
             DropForeignKey("dbo.SolicitacaoSaida", "idSolicitacao", "dbo.Solicitacao");
             DropForeignKey("dbo.SolicitacaoEntrada", "idSolicitacao", "dbo.Solicitacao");
             DropForeignKey("dbo.Porteiro", "idPessoaFisica", "dbo.Terceirizado");
@@ -320,9 +324,10 @@ namespace Sistema.Ifsp.DAL.Migrations
             DropForeignKey("dbo.Vaga", "pessoaFisica_idPessoaFisica", "dbo.PessoaFisica");
             DropForeignKey("dbo.Vaga", "domingo_idDia", "dbo.Dia");
             DropForeignKey("dbo.Dia", "pessoaFisica_idPessoaFisica", "dbo.PessoaFisica");
-            DropForeignKey("dbo.Solicitacao", "assistenteAluno_idPessoaFisica", "dbo.AssistenteAluno");
+            DropForeignKey("dbo.Solicitacao", "assistenteAluno_idPessoaFisica", "dbo.Funcionario");
             DropForeignKey("dbo.Solicitacao", "aluno_idPessoaFisica", "dbo.Aluno");
-            DropForeignKey("dbo.PermanenciaVeiculo", "assistenteAdministracao_idPessoaFisica", "dbo.AssistenteAdministracao");
+            DropForeignKey("dbo.PermanenciaVeiculo", "AssistenteAdministracao_idPessoaFisica", "dbo.AssistenteAdministracao");
+            DropForeignKey("dbo.PermanenciaVeiculo", "funcionario_idPessoaFisica", "dbo.Funcionario");
             DropIndex("dbo.SolicitacaoSaida", new[] { "porteiro_idPessoaFisica" });
             DropIndex("dbo.SolicitacaoSaida", new[] { "idSolicitacao" });
             DropIndex("dbo.SolicitacaoEntrada", new[] { "idSolicitacao" });
@@ -349,7 +354,8 @@ namespace Sistema.Ifsp.DAL.Migrations
             DropIndex("dbo.Dia", new[] { "pessoaFisica_idPessoaFisica" });
             DropIndex("dbo.Solicitacao", new[] { "assistenteAluno_idPessoaFisica" });
             DropIndex("dbo.Solicitacao", new[] { "aluno_idPessoaFisica" });
-            DropIndex("dbo.PermanenciaVeiculo", new[] { "assistenteAdministracao_idPessoaFisica" });
+            DropIndex("dbo.PermanenciaVeiculo", new[] { "AssistenteAdministracao_idPessoaFisica" });
+            DropIndex("dbo.PermanenciaVeiculo", new[] { "funcionario_idPessoaFisica" });
             DropTable("dbo.SolicitacaoSaida");
             DropTable("dbo.SolicitacaoEntrada");
             DropTable("dbo.Porteiro");

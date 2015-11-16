@@ -160,7 +160,7 @@ namespace Sistema.Ifsp.View
                             {
                                 abertura = DateTime.Now,
                                 aluno = aluno,
-                                assistenteAluno = (AssistenteAluno) acessoPessoa,
+                                assistenteAluno = (Funcionario) acessoPessoa,
                                 motivo = txtMotivoAluno.Text,
                                 status = StatusSolicitacao.aberto,
                                 saidaSupervisionada = saidaSupervisionada
@@ -190,7 +190,7 @@ namespace Sistema.Ifsp.View
                         {
                             abertura = DateTime.Now,
                             aluno = aluno,
-                            assistenteAluno = (AssistenteAluno) acessoPessoa,
+                            assistenteAluno = (Funcionario) acessoPessoa,
                             motivo = txtMotivoAluno.Text
                         };
                         var sDao = new SolicitacaoEntradaDAO();
@@ -382,7 +382,7 @@ namespace Sistema.Ifsp.View
                     var ss = ssDAO.find(Convert.ToInt32(dgvSolicitacoesAbertas.CurrentRow.Cells[0].Value));
                     ss.encerramento = DateTime.Now;
                     ss.status = StatusSolicitacao.encerrado;
-                    ss.porteiro = (Porteiro) acessoPessoa;
+                    ss.porteiro = (PessoaFisica) acessoPessoa;
                     try
                     {
                         if (ssDAO.atualizar(ss))
@@ -1176,7 +1176,6 @@ namespace Sistema.Ifsp.View
 
         private void btnRegistarSaidaFornecedor_Click(object sender, EventArgs e)
         {
-
             if (dgvFornecedores.Rows.Count == 0)
             {
                 mensagem("Selecione a linha que corresponde a um fonecedor");
@@ -1441,7 +1440,7 @@ namespace Sistema.Ifsp.View
                                 p.curso = cmbPerVeiCurso.Text;
                                 p.modulo = cmbPerVeiModulo.Text;
                                 p.anoLetivo = cmbPerVeiAnoLetivo.Text;
-                                p.assistenteAdministracao = (AssistenteAdministracao) acessoPessoa;
+                                p.funcionario = (AssistenteAdministracao) acessoPessoa;
                                 p.dataEntrada = DateTime.Now;
                                 pDAO.adicionar(p);
                                 mensagem("Permanência de veículo cadastrad com sucesso!");
@@ -1477,7 +1476,7 @@ namespace Sistema.Ifsp.View
                                 p.prontuario2 = txtPerVeiProntuario2.Text;
                                 p.prontuario3 = txtPerVeiProntuario3.Text;
                                 p.prontuario4 = txtPerVeiProntuario4.Text;
-                                p.assistenteAdministracao = (AssistenteAdministracao) acessoPessoa;
+                                p.funcionario = (AssistenteAdministracao) acessoPessoa;
                                 pDAO.adicionar(p);
                                 mensagem("Permanência de veículo cadastrada com sucesso!");
                                 atualizaGridPermanenciaVeiculo();
@@ -2142,9 +2141,31 @@ namespace Sistema.Ifsp.View
             printPreview.ShowDialog();
         }
 
-        private void tabPermanenciaVeiculoEncerrar_Click(object sender, EventArgs e)
+        private void btnRegistrarSaidaVisitante(object sender, EventArgs e)
         {
-
+            if (dgvVisitante.Rows.Count == 0)
+            {
+                mensagem("Selecione a linha que corresponde a um visitante");
+            }
+            else
+            {
+                if (MessageBox.Show("Deseja realmente cadastrar a suída desse visitate", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(dgvVisitante.CurrentRow.Cells[0].Value);
+                    VisitanteDAO vDao = new VisitanteDAO();
+                    var visitante = vDao.find(id);
+                    visitante.saida = DateTime.Now;
+                    if (vDao.atualizar(visitante))
+                    {
+                        preencherGridVisitanteFornecedores();
+                        mensagem("Registro de saída finalizado com sucesso!");
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
     }
 }

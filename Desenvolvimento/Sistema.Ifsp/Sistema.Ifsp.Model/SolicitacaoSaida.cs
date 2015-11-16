@@ -10,6 +10,6 @@ namespace Sistema.Ifsp.Model
         public bool saidaSupervisionada { get; set; }
         public StatusSolicitacao status { get; set; }
         public DateTime? encerramento { get; set; }
-        public Porteiro porteiro { get; set; }
+        public PessoaFisica porteiro { get; set; }
     }
 }

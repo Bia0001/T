@@ -7,13 +7,13 @@ namespace Sistema.Ifsp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class alterandopessoafisica : IMigrationMetadata
+    public sealed partial class criacao : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(alterandopessoafisica));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(criacao));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511122328075_alterando-pessoafisica"; }
+            get { return "201511161737073_criacao"; }
         }
         
         string IMigrationMetadata.Source

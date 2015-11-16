@@ -33,7 +33,7 @@ namespace Sistema.Ifsp.Test.Unitario
                 nome = "Willian Costa",
                 prontuario = new Prontuario()
                 {
-                    prontuario = "1320011"
+                    prontuario = "000"
                 },
                 responsavel1 = "Hugo Silva",
                 responsavel2 = "Beatriz Souza",
@@ -52,7 +52,7 @@ namespace Sistema.Ifsp.Test.Unitario
                 nome = "Lucia Almeida Soares",
                 prontuario = new Prontuario()
                 {
-                    prontuario = "1400020",
+                    prontuario = "111",
                 },
                 rg = "39846263",
                 sexo = "M",
@@ -83,7 +83,7 @@ namespace Sistema.Ifsp.Test.Unitario
                 nome = "Michele Arruda",
                 prontuario = new Prontuario()
                 {
-                    prontuario = "43789434"
+                    prontuario = "222"
                 },
                 rg = "545335653",
                 sexo = "F",
@@ -100,7 +100,7 @@ namespace Sistema.Ifsp.Test.Unitario
                 nome = "Grazy",
                 prontuario = new Prontuario()
                 {
-                    prontuario = "43789934"
+                    prontuario = "333"
                 },
                 rg = "545332653",
                 sexo = "F",
@@ -117,7 +117,7 @@ namespace Sistema.Ifsp.Test.Unitario
                 nome = "Lucas Bonetti",
                 prontuario = new Prontuario()
                 {
-                    prontuario = "43288934"
+                    prontuario = "444"
                 },
                 rg = "54532653",
                 sexo = "M",
