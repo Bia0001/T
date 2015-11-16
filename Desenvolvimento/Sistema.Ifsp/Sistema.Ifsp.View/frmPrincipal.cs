@@ -29,11 +29,11 @@ namespace Sistema.Ifsp.View
         private frmPrincipal()
         {
             InitializeComponent();
-            preencherGridsSolicitacoes();
-            preencherGridVisitanteFornecedores();
-            atualizaEstacionamento();
-            atualizaGridPermanenciaVeiculo();
-            telaInicialCadTer();
+            //preencherGridsSolicitacoes();
+            //preencherGridVisitanteFornecedores();
+            //atualizaEstacionamento();
+            //atualizaGridPermanenciaVeiculo();
+            //telaInicialCadTer();
         }
 
         private void preencherGridVisitanteFornecedores()
@@ -2155,12 +2155,7 @@ namespace Sistema.Ifsp.View
             printPreview.ShowDialog();
         }
 
-        private void rdbNaoSaidaSupervisionada_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ferramentasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tabPermanenciaVeiculoEncerrar_Click(object sender, EventArgs e)
         {
 
         }
